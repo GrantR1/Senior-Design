@@ -17,3 +17,8 @@ config/icon="res://Sprites/icon.svg"
 [dotnet]
 
 project/assembly_name="Testing"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
