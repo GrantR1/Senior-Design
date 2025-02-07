@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmscy60h5xfkk"]
+[gd_scene load_steps=10 format=3 uid="uid://dmscy60h5xfkk"]
 
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_aq4ac"]
 [ext_resource type="FontFile" uid="uid://cdnl3ff75ygba" path="res://Main Menu/Spaceport_2006.otf" id="1_oawyu"]
@@ -37,6 +37,8 @@ shadow_color = Color(0, 0, 0, 0.203922)
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dl100"]
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -66,9 +68,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 60
 alignment = 1
-
-[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -148,20 +147,35 @@ text = "About"
 [node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Donate" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(240, 64)
+[node name="Stevens Day of Giving" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 64)
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.917647, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
-theme_override_styles/normal = SubResource("StyleBoxFlat_tvjj2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dl100")
+text = "Stevens Day of Giving"
+underline = 1
+
+[node name="Donate" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.917647, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dl100")
 text = "Donate"
+underline = 1
 
 [node name="About" parent="." instance=ExtResource("3_pvegu")]
 visible = false
@@ -174,4 +188,5 @@ layout_mode = 1
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/How To Play" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/About Button" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Stevens Day of Giving" to="." method="_on_donate_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Donate" to="." method="_on_donate_pressed"]

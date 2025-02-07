@@ -3,7 +3,8 @@ extends Control
 
 @onready var start_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start Button" as Button;
 @onready var about_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/About Button" as Button;
-@onready var donate_button = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Donate as Button;
+@onready var donate_button = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Donate as LinkButton;
+@onready var stevensDayOfGiving_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Stevens Day of Giving" as LinkButton;
 @onready var how_to_play_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/How To Play" as Button;
 @onready var about_page = $About as About;
 @onready var how_to_play = $"How To Play" as HowToPlay;
@@ -15,6 +16,7 @@ func handle_connecting_signals() -> void:
 	about_button.button_down.connect(_on_about_button_pressed);
 	how_to_play_button.button_down.connect(_on_howToPlay_button_pressed);
 	donate_button.button_down.connect(_on_donate_pressed);
+	stevensDayOfGiving_button.button_down.connect(_on_stevensDayOfDiving_website_pressed);
 	about_page.exit_about.connect(_on_exit_about);
 	how_to_play.exit_about.connect(_on_exit_howToPlay);
 
@@ -49,8 +51,13 @@ func _on_howToPlay_button_pressed() -> void:
 func _on_donate_pressed() -> void:
 	#Function for the donate button which will 
 	#take the user to the website to donate
-	
-	print('Donate Pressed');
+
+	OS.shell_open("https://give.stevens.edu/2025-day-of-giving");
+
+func _on_stevensDayOfDiving_website_pressed() -> void:
+	#Function for the stevens day of giving website button
+
+	OS.shell_open("https://www.stevens.edu/events/stevens-day-of-giving");
 
 func _on_exit_about() -> void:
 	margin_container.visible = true;
