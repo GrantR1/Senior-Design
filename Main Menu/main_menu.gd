@@ -12,11 +12,11 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func handle_connecting_signals() -> void:
-	start_button.button_down.connect(_on_start_button_pressed);
-	about_button.button_down.connect(_on_about_button_pressed);
-	how_to_play_button.button_down.connect(_on_howToPlay_button_pressed);
-	donate_button.button_down.connect(_on_donate_pressed);
-	stevensDayOfGiving_button.button_down.connect(_on_stevensDayOfDiving_website_pressed);
+	start_button.pressed.connect(_on_start_button_pressed);
+	about_button.pressed.connect(_on_about_button_pressed);
+	how_to_play_button.pressed.connect(_on_howToPlay_button_pressed);
+	donate_button.pressed.connect(_on_donate_pressed);
+	stevensDayOfGiving_button.pressed.connect(_on_stevensDayOfDiving_website_pressed);
 	about_page.exit_about.connect(_on_exit_about);
 	how_to_play.exit_about.connect(_on_exit_howToPlay);
 

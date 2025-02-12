@@ -184,9 +184,3 @@ layout_mode = 1
 [node name="How To Play" parent="." instance=ExtResource("4_r8y7v")]
 visible = false
 layout_mode = 1
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/How To Play" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/About Button" to="." method="_on_about_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Stevens Day of Giving" to="." method="_on_donate_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Donate" to="." method="_on_donate_pressed"]
