@@ -51,8 +51,9 @@ func _input(event: InputEvent):
 				start_drag(card)
 			
 		else:
-			finish_drag();
-			print("Release");
+			if card_being_dragged:
+				finish_drag();
+				print("Release");
 
 func start_drag(card):
 	card_being_dragged = card
