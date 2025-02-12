@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bh51rnt0flc78"]
 
-[ext_resource type="Script" path="res://Scenes and Scripts/cardScript.gd" id="1_v30tg"]
+[ext_resource type="Script" path="res://ScenesandScripts/cardScript.gd" id="1_v30tg"]
 [ext_resource type="Texture2D" uid="uid://c28leukgqhd1" path="res://Sprites/StevensCardsFront.png" id="2_yqc4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij3nv"]
