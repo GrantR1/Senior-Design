@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmscy60h5xfkk"]
+[gd_scene load_steps=11 format=3 uid="uid://dmscy60h5xfkk"]
 
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_aq4ac"]
 [ext_resource type="FontFile" uid="uid://cdnl3ff75ygba" path="res://Main Menu/Spaceport_2006.otf" id="1_oawyu"]
 [ext_resource type="PackedScene" uid="uid://b34rn2h6i0c1w" path="res://About Page/about.tscn" id="3_pvegu"]
 [ext_resource type="PackedScene" uid="uid://d3fdfxtng5f1p" path="res://How To Play/how_to_play.tscn" id="4_r8y7v"]
+[ext_resource type="PackedScene" uid="uid://cuqrjuahc6ar5" path="res://Choose A Deck/choose_a_deck.tscn" id="5_53phj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a35of"]
 
@@ -184,3 +185,6 @@ layout_mode = 1
 [node name="How To Play" parent="." instance=ExtResource("4_r8y7v")]
 visible = false
 layout_mode = 1
+
+[node name="Choose A Deck" parent="." instance=ExtResource("5_53phj")]
+visible = false

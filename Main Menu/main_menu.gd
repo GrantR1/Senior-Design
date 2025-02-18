@@ -8,6 +8,7 @@ extends Control
 @onready var how_to_play_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/How To Play" as Button;
 @onready var about_page = $About as About;
 @onready var how_to_play = $"How To Play" as HowToPlay;
+@onready var choose_a_deck = $"Choose A Deck" as ChooseADeck;
 @onready var margin_container = $MarginContainer as MarginContainer;
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,7 @@ func handle_connecting_signals() -> void:
 	stevensDayOfGiving_button.pressed.connect(_on_stevensDayOfDiving_website_pressed);
 	about_page.exit_about.connect(_on_exit_about);
 	how_to_play.exit_about.connect(_on_exit_howToPlay);
+	choose_a_deck.exit_about.connect(_on_exit_chooseADeck);
 
 func _ready() -> void:
 	about_page.visible = false;
@@ -31,6 +33,10 @@ func _on_start_button_pressed() -> void:
 	#need to add path to scene file that will start the game
 	#get_tree().change_scene_to_file(); #add path here
 	print('Start Pressed');
+	margin_container.visible = false;
+	choose_a_deck.set_process(true);
+	choose_a_deck.visible = true;
+
 
 
 func _on_about_button_pressed() -> void:
@@ -62,6 +68,10 @@ func _on_stevensDayOfDiving_website_pressed() -> void:
 func _on_exit_about() -> void:
 	margin_container.visible = true;
 	about_page.visible = false;
+	
+func _on_exit_chooseADeck() -> void:
+	margin_container.visible = true;
+	choose_a_deck.visible = false;
 
 func _on_exit_howToPlay() -> void:
 	margin_container.visible = true;
