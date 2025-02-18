@@ -68,6 +68,18 @@ text = "How To Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "(Placeholder, add more at somepoint with image examples and make less wordy)
+Each player starts with a set amount of hp
+During your turn you draw to add to your hand, gaining one mana for use
+You can spend this mana to play any cards in your hand.
+
+Card Types:
+Allies: Your bread and butter attackers, place them down in a lane and they will fire their attacks down the lane at the enemy.
+Monuments: These are landmarks that you can place in your secondary row, and act as passive buffs for the lane or the player.
+Defenders: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
+
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(240, 64)
 layout_mode = 2
