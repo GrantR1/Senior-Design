@@ -51,22 +51,14 @@ script = ExtResource("1_aq4ac")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -410.5
-offset_top = -213.5
-offset_right = 410.5
-offset_bottom = 213.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme_override_constants/separation = 60
 alignment = 1
 
@@ -76,7 +68,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("1_oawyu")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 120
 text = "Stevens Day of Giving"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -95,14 +87,14 @@ alignment = 1
 layout_mode = 2
 
 [node name="Start Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(240, 64)
+custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
@@ -113,14 +105,14 @@ text = "Start"
 layout_mode = 2
 
 [node name="How To Play" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(240, 64)
+custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
@@ -131,14 +123,14 @@ text = "How To Play"
 layout_mode = 2
 
 [node name="About Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(240, 64)
+custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
@@ -158,7 +150,7 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.917647, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dl100")
 text = "Stevens Day of Giving"
 underline = 1
@@ -173,7 +165,7 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.917647, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dl100")
 text = "Donate"
 underline = 1
@@ -188,3 +180,4 @@ layout_mode = 1
 
 [node name="Choose A Deck" parent="." instance=ExtResource("5_53phj")]
 visible = false
+layout_mode = 1
