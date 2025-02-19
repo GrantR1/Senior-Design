@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3fdfxtng5f1p"]
+[gd_scene load_steps=8 format=3 uid="uid://d3fdfxtng5f1p"]
 
 [ext_resource type="Script" path="res://How To Play/how_to_play.gd" id="1_i1qh8"]
 [ext_resource type="FontFile" uid="uid://cdnl3ff75ygba" path="res://Main Menu/Spaceport_2006.otf" id="1_jsmv2"]
+[ext_resource type="FontFile" uid="uid://03ad8u37r5a3" path="res://Main Menu/TT Octosquares Trial Regular.ttf" id="3_dn02k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htkat"]
 
@@ -58,18 +59,31 @@ layout_mode = 2
 theme_override_constants/separation = -48
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("1_jsmv2")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 72
 text = "How To Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_dn02k")
+theme_override_font_sizes/normal_font_size = 30
 text = "(Placeholder, add more at somepoint with image examples and make less wordy)
 Each player starts with a set amount of hp
 During your turn you draw to add to your hand, gaining one mana for use
@@ -81,7 +95,7 @@ Monuments: These are landmarks that you can place in your secondary row, and act
 Defenders: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(240, 64)
+custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -90,7 +104,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_htkat")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r1lp1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_t1r1f")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b34rn2h6i0c1w"]
+[gd_scene load_steps=8 format=3 uid="uid://b34rn2h6i0c1w"]
 
 [ext_resource type="Script" path="res://About Page/about.gd" id="1_0scjf"]
 [ext_resource type="FontFile" uid="uid://cdnl3ff75ygba" path="res://Main Menu/Spaceport_2006.otf" id="1_varfc"]
+[ext_resource type="FontFile" uid="uid://03ad8u37r5a3" path="res://Main Menu/TT Octosquares Trial Regular.ttf" id="3_nrdqt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3s23"]
 
@@ -58,19 +59,19 @@ layout_mode = 2
 theme_override_constants/separation = -48
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("1_varfc")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 72
 text = "About"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 clip_contents = false
-custom_minimum_size = Vector2(0, 875)
+custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
@@ -82,6 +83,8 @@ size_flags_vertical = 3
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_nrdqt")
+theme_override_font_sizes/normal_font_size = 30
 text = "	The Stevens Day of Giving event is an annual fundraising initiative hosted by Stevens Institute of Technology to encourage support for various programs and initiatives. During this time, faculty, students, alumni, and others who care about Stevens’ well-being are encouraged to contribute and donate to areas they are passionate about, such as scholarships, research, student experiences, and more!
 
 	This game was created as part of a year-long computer science senior design project to inspire more people to donate to the cause. The goal is to showcase the hard work and dedication that students put into their education and the well-being of the school. The game was designed to be easy to play while also highlighting many aspects of student life and campus culture as a whole.
@@ -91,7 +94,7 @@ text = "	The Stevens Day of Giving event is an annual fundraising initiative hos
 Thank you, and enjoy!"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(240, 64)
+custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -100,7 +103,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x3s23")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v1x5s")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_km2qu")
