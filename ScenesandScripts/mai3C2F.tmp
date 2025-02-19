@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmnebc45txdop" path="res://Sprites/StevensCardBack.png" id="5_6nvh7"]
 [ext_resource type="Script" path="res://ScenesandScripts/Player_Hand.gd" id="5_n4pet"]
 [ext_resource type="Script" path="res://ScenesandScripts/deck.gd" id="5_rcqkq"]
-[ext_resource type="Script" path="res://ScenesandScripts/InputManager.gd" id="7_e3vy2"]
+[ext_resource type="Script" path="res://ScenesandScripts/input_manager.gd" id="7_e3vy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c38p5"]
 size = Vector2(320, 448)
@@ -33,25 +33,12 @@ scale = Vector2(0.529017, 0.52)
 script = ExtResource("5_rcqkq")
 
 [node name="Area2D" type="Area2D" parent="Deck"]
-collision_layer = 4
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
 shape = SubResource("RectangleShape2D_c38p5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Deck"]
-z_index = -2
 texture = ExtResource("5_6nvh7")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
-modulate = Color(0, 0, 0, 1)
-z_index = -2
-offset_left = -9.0
-offset_top = -28.0
-offset_right = 31.0
-offset_bottom = 12.0
-scale = Vector2(3, 3)
-text = "0"
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("7_e3vy2")

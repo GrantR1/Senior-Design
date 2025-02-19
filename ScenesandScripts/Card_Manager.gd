@@ -2,6 +2,7 @@ extends Node2D
 
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
+const DEFAULT_CARD_SPEED = 0.1
 
 var player_hand_ref
 var screen_size;
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	player_hand_ref = $"../PlayerHand"
+	$"../InputManager".connect("left_mouse_button_released", on_left_click_released)
 
 func connect_card_signals(card):
 	card.connect("hovered", on_hovered_over_card)
@@ -46,17 +48,6 @@ func highlight_card(card, hovered):
 		card.scale = Vector2(1, 1)
 		card.z_index = 1
 
-func _input(event: InputEvent):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			var card = raycast()
-			if card:
-				start_drag(card)
-			
-		else:
-			if card_being_dragged:
-				finish_drag();
-				print("Release");
 
 func start_drag(card):
 	card_being_dragged = card
@@ -71,7 +62,7 @@ func finish_drag():
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
 	else:
-		player_hand_ref.add_card_to_hand(card_being_dragged)
+		player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
 	card_being_dragged = null;
 
 func raycast_slot ():
@@ -99,7 +90,14 @@ func raycast ():
 		return get_card_with_highest_z_index(result)
 	print("Empty space")
 	return null;
-	
+
+
+func on_left_click_released():
+	print("Howdy")
+	if card_being_dragged:
+				finish_drag();
+
+
 func get_card_with_highest_z_index(cards):
 	var highest_z_card = cards[0].collider.get_parent()
 	var highest_z_index = highest_z_card.z_index
