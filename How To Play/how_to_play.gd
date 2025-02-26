@@ -3,6 +3,7 @@ extends Control
 
 @onready var exit_button = $MarginContainer/VBoxContainer/Exit_Button as Button;
 
+
 signal exit_about;
 
 # Called when the node enters the scene tree for the first time.

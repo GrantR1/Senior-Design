@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dc85jvkrmu5fy" path="res://Main Menu/Stevens_Campus.jpg" id="2_s4x87"]
 [ext_resource type="PackedScene" uid="uid://b34rn2h6i0c1w" path="res://About Page/about.tscn" id="3_pvegu"]
 [ext_resource type="PackedScene" uid="uid://d3fdfxtng5f1p" path="res://How To Play/how_to_play.tscn" id="4_r8y7v"]
-[ext_resource type="PackedScene" uid="uid://cuqrjuahc6ar5" path="res://Choose A Deck/choose_a_deck.tscn" id="5_53phj"]
+[ext_resource type="PackedScene" uid="uid://cuqrjuahc6ar5" path="res://Choose A Deck/choose_your_deck.tscn" id="5_53phj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_312x8"]
 texture = ExtResource("2_s4x87")
