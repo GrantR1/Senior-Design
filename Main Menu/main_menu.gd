@@ -8,7 +8,7 @@ extends Control
 @onready var how_to_play_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/How To Play" as Button;
 @onready var about_page = $About as About;
 @onready var how_to_play = $"How To Play" as HowToPlay;
-@onready var choose_your_deck = $"Choose Your Deck" as ChooseYourDeck;
+@onready var choose_your_deck = $"Choose A Deck" as ChooseYourDeck;
 @onready var margin_container = $MarginContainer as MarginContainer;
 
 # Called when the node enters the scene tree for the first time.

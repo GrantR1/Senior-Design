@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dmscy60h5xfkk"]
 
-[ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_aq4ac"]
+[ext_resource type="Script" uid="uid://d2nv0hpp7o54g" path="res://Main Menu/main_menu.gd" id="1_aq4ac"]
 [ext_resource type="FontFile" uid="uid://cdnl3ff75ygba" path="res://Main Menu/Spaceport_2006.otf" id="1_oawyu"]
 [ext_resource type="Texture2D" uid="uid://dc85jvkrmu5fy" path="res://Main Menu/Stevens_Campus.jpg" id="2_s4x87"]
 [ext_resource type="PackedScene" uid="uid://b34rn2h6i0c1w" path="res://About Page/about.tscn" id="3_pvegu"]
@@ -100,9 +100,9 @@ custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
@@ -118,9 +118,9 @@ custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
@@ -136,9 +136,9 @@ custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
@@ -190,3 +190,4 @@ layout_mode = 1
 [node name="Choose A Deck" parent="." instance=ExtResource("5_53phj")]
 visible = false
 layout_mode = 1
+anchors_preset = 15
