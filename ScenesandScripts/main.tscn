@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://ciwgdbra2wgnf"]
 
-[ext_resource type="Script" path="res://ScenesandScripts/Card_Manager.gd" id="1_phl1v"]
+[ext_resource type="Script" uid="uid://dvt2ejwepwy0n" path="res://ScenesandScripts/Card_Manager.gd" id="1_phl1v"]
 [ext_resource type="PackedScene" uid="uid://dvdulm2c6xa0q" path="res://ScenesandScripts/cardslot.tscn" id="3_qwa6h"]
-[ext_resource type="Script" path="res://ScenesandScripts/Card_slot.gd" id="4_jqgo3"]
+[ext_resource type="Script" uid="uid://c8ci4evgxj4rs" path="res://ScenesandScripts/Card_slot.gd" id="4_jqgo3"]
 [ext_resource type="Texture2D" uid="uid://cmnebc45txdop" path="res://Sprites/StevensCardBack.png" id="5_6nvh7"]
-[ext_resource type="Script" path="res://ScenesandScripts/Player_Hand.gd" id="5_n4pet"]
-[ext_resource type="Script" path="res://ScenesandScripts/deck.gd" id="5_rcqkq"]
-[ext_resource type="Script" path="res://ScenesandScripts/InputManager.gd" id="7_e3vy2"]
+[ext_resource type="Script" uid="uid://b800oqfvjpj0n" path="res://ScenesandScripts/Player_Hand.gd" id="5_n4pet"]
+[ext_resource type="Script" uid="uid://ddhidwjrdonsx" path="res://ScenesandScripts/deck.gd" id="5_rcqkq"]
+[ext_resource type="Script" uid="uid://b7ffegc34q5fw" path="res://ScenesandScripts/InputManager.gd" id="7_e3vy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c38p5"]
 size = Vector2(320, 448)
