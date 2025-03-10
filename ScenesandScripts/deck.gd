@@ -1,7 +1,7 @@
 extends Node2D
 
 const CARD_SCENE_PATH = "res://ScenesandScripts/Card.tscn"
-var player_deck = ["Teachers Assistant", "The Professor", "Moody Student"]
+var player_deck = ["Teachers Assistant", "The Professor", "Moody Student", "SS Stevens victory","Henry Morton", "University Center Complex", "Sleep Deprived"]
 var card_database_reference
 const CARD_DRAW_SPEED = .5
 
