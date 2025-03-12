@@ -190,4 +190,7 @@ layout_mode = 1
 [node name="Choose A Deck" parent="." instance=ExtResource("5_53phj")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
