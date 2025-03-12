@@ -16,24 +16,70 @@ size = Vector2(320, 448)
 [node name="Card Manager" type="Node2D" parent="."]
 script = ExtResource("1_phl1v")
 
-[node name="Cardslot" parent="." instance=ExtResource("3_qwa6h")]
+[node name="CardSlots" type="Node2D" parent="."]
+
+[node name="Cardslot" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 position = Vector2(1080, 750)
-scale = Vector2(0.8, 0.8)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot2" parent="." instance=ExtResource("3_qwa6h")]
+[node name="Cardslot2" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 position = Vector2(840, 750)
-scale = Vector2(0.8, 0.8)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot3" parent="." instance=ExtResource("3_qwa6h")]
+[node name="Cardslot3" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 position = Vector2(1320, 750)
-scale = Vector2(0.8, 0.8)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot4" parent="." instance=ExtResource("3_qwa6h")]
+[node name="Cardslot4" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 position = Vector2(600, 750)
-scale = Vector2(0.8, 0.8)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot5" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(1080, 125)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot6" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(840, 125)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot7" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(1320, 125)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot8" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(600, 125)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot9" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(1080, 330)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot10" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(840, 330)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot11" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(1320, 330)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot12" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(600, 330)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot13" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(1080, 545)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot14" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(840, 545)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot15" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(1320, 545)
+script = ExtResource("4_jqgo3")
+
+[node name="Cardslot16" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+position = Vector2(600, 545)
 script = ExtResource("4_jqgo3")
 
 [node name="PlayerHand" type="Node2D" parent="."]

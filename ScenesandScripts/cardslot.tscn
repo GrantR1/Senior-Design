@@ -6,6 +6,7 @@
 size = Vector2(276, 322)
 
 [node name="Cardslot" type="Node2D"]
+scale = Vector2(0.6, 0.6)
 
 [node name="CardslotImage" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-06, 3.8147e-06)

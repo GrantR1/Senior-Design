@@ -3,8 +3,8 @@ extends Node2D
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_SPEED = 0.1
-const DEFAULT_CARD_SCALE = 0.8
-const CARD_BIGGER_SCALE = 0.85
+const DEFAULT_CARD_SCALE = 0.6
+const CARD_BIGGER_SCALE = 0.65
 
 var player_hand_ref
 var screen_size;
