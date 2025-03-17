@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciwgdbra2wgnf"]
+[gd_scene load_steps=11 format=3 uid="uid://ciwgdbra2wgnf"]
 
 [ext_resource type="Script" uid="uid://dvt2ejwepwy0n" path="res://ScenesandScripts/Card_Manager.gd" id="1_phl1v"]
+[ext_resource type="Script" uid="uid://dhixoxfbxace8" path="res://ScenesandScripts/SpellCard_slot.gd" id="3_cggtr"]
 [ext_resource type="PackedScene" uid="uid://dvdulm2c6xa0q" path="res://ScenesandScripts/cardslot.tscn" id="3_qwa6h"]
-[ext_resource type="Script" uid="uid://c8ci4evgxj4rs" path="res://ScenesandScripts/Card_slot.gd" id="4_jqgo3"]
+[ext_resource type="Script" uid="uid://c8ci4evgxj4rs" path="res://ScenesandScripts/GuardianCard_slot.gd" id="4_jqgo3"]
 [ext_resource type="Texture2D" uid="uid://cmnebc45txdop" path="res://Sprites/StevensCardBack.png" id="5_6nvh7"]
+[ext_resource type="PackedScene" uid="uid://e4yc5m7tug2i" path="res://ScenesandScripts/Enemycardslot.tscn" id="5_80h8m"]
 [ext_resource type="Script" uid="uid://b800oqfvjpj0n" path="res://ScenesandScripts/Player_Hand.gd" id="5_n4pet"]
 [ext_resource type="Script" uid="uid://ddhidwjrdonsx" path="res://ScenesandScripts/deck.gd" id="5_rcqkq"]
 [ext_resource type="Script" uid="uid://b7ffegc34q5fw" path="res://ScenesandScripts/InputManager.gd" id="7_e3vy2"]
@@ -19,68 +21,68 @@ script = ExtResource("1_phl1v")
 [node name="CardSlots" type="Node2D" parent="."]
 
 [node name="Cardslot" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(1080, 750)
-script = ExtResource("4_jqgo3")
+script = ExtResource("3_cggtr")
 
 [node name="Cardslot2" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(840, 750)
-script = ExtResource("4_jqgo3")
+script = ExtResource("3_cggtr")
 
 [node name="Cardslot3" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(1320, 750)
-script = ExtResource("4_jqgo3")
+script = ExtResource("3_cggtr")
 
 [node name="Cardslot4" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(600, 750)
-script = ExtResource("4_jqgo3")
+script = ExtResource("3_cggtr")
 
 [node name="Cardslot5" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(1080, 125)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot6" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(840, 125)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot7" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(1320, 125)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot8" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(600, 125)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot9" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(1080, 330)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot10" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(840, 330)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot11" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(1320, 330)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot12" parent="CardSlots" instance=ExtResource("3_qwa6h")]
-position = Vector2(600, 330)
-script = ExtResource("4_jqgo3")
-
-[node name="Cardslot13" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(1080, 545)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot14" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot6" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(840, 545)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot15" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot7" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(1320, 545)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot16" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot8" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+z_index = -3
 position = Vector2(600, 545)
 script = ExtResource("4_jqgo3")
+
+[node name="EnemyCardslot" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(600, 125)
+
+[node name="EnemyCardslot2" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(1320, 125)
+
+[node name="EnemyCardslot3" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(1080, 125)
+
+[node name="EnemyCardslot4" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(840, 125)
+
+[node name="EnemyCardslot5" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(600, 330)
+
+[node name="EnemyCardslot6" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(1320, 330)
+
+[node name="EnemyCardslot7" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(1080, 330)
+
+[node name="EnemyCardslot8" parent="CardSlots" instance=ExtResource("5_80h8m")]
+position = Vector2(840, 330)
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("5_n4pet")
@@ -113,3 +115,21 @@ text = "0"
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("7_e3vy2")
+
+[node name="OpponentDeck" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentDeck"]
+z_index = -2
+position = Vector2(1770, 180)
+scale = Vector2(0.8, 0.786)
+texture = ExtResource("5_6nvh7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OpponentDeck"]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+offset_left = 1762.8
+offset_top = 157.992
+offset_right = 1802.8
+offset_bottom = 197.992
+scale = Vector2(3, 3)
+text = "0"

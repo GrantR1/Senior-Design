@@ -5,11 +5,13 @@ const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_SPEED = 0.1
 const DEFAULT_CARD_SCALE = 0.6
 const CARD_BIGGER_SCALE = 0.65
+const CARD_SMALLER_SCALE = .5
 
 var player_hand_ref
 var screen_size;
 var card_being_dragged;
 var is_hovering_on_card;
+var played_guardian_card_this_turn = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,8 +35,7 @@ func on_hovered_over_card(card):
 		highlight_card(card, true);
 
 func on_hovered_off_card(card):
-	#check if hovered off 1 card and strait onto another
-	if !card_being_dragged:
+	if !card.card_slot_card_in && !card_being_dragged:
 		highlight_card(card,false)
 		var new_card_hovered = raycast()
 		if new_card_hovered:
@@ -58,13 +59,24 @@ func finish_drag():
 	card_being_dragged.scale = Vector2(CARD_BIGGER_SCALE, CARD_BIGGER_SCALE)
 	var card_slot_found = raycast_slot();
 	if card_slot_found and not card_slot_found.card_in_slot:
-		player_hand_ref.remove_card(card_being_dragged)
-		#card dragged into empty slot
-		card_being_dragged.position = card_slot_found.position
-		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
-		card_slot_found.card_in_slot = true
-	else:
-		player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
+		if card_being_dragged.card_type == card_slot_found.card_slot_type:
+			#if the card type can go in the slot ^
+			if !played_guardian_card_this_turn:
+				#card scalling down
+				played_guardian_card_this_turn = true
+				card_being_dragged.scale = Vector2(CARD_SMALLER_SCALE, CARD_SMALLER_SCALE);
+				#he does this to fix drag over issues but it used to break it vvv
+				card_being_dragged.z_index = -1;
+				is_hovering_on_card = false
+				card_being_dragged.card_slot_card_in = card_slot_found
+				player_hand_ref.remove_card(card_being_dragged)
+				#card dragged into empty slot
+				card_being_dragged.position = card_slot_found.position
+				card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+				card_slot_found.card_in_slot = true
+				card_being_dragged = null;
+				return
+	player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
 	card_being_dragged = null;
 
 func raycast_slot ():

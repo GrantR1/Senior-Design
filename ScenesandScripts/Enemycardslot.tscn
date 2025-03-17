@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4yc5m7tug2i"]
+
+[ext_resource type="Texture2D" uid="uid://b1p8t7566xtfv" path="res://Sprites/cardslot.png" id="1_6bra2"]
+
+[node name="Cardslot" type="Node2D"]
+scale = Vector2(0.6, 0.6)
+
+[node name="CardslotImage" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-06, 3.8147e-06)
+scale = Vector2(0.539063, 0.457386)
+texture = ExtResource("1_6bra2")
