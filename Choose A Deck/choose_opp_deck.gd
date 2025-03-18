@@ -1,5 +1,6 @@
-class_name ChooseYourDeck
+class_name ChooseOppDeck
 extends Control
+
 
 @onready var exit_button = $Exit_Button as Button;
 @onready var Deck_One = $"Deck_One" as Button;
@@ -14,8 +15,10 @@ var selection = null;
 signal exit_about;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	exit_button.button_down.connect(_on_exit_pressed);
+	print(DeckVars.your_deck);
+	deckInfoText.add_text(DeckVars.your_deck)
 	Confirm_Selection.button_down.connect(_on_Confirm_Selection_Pressed);
+	exit_button.button_down.connect(_on_exit_pressed);
 	Deck_One.button_down.connect(_on_Deck_One_Pressed);
 	Deck_Two.button_down.connect(_on_Deck_Two_Pressed);
 	Deck_Three.button_down.connect(_on_Deck_Three_Pressed);
@@ -31,27 +34,27 @@ func _on_exit_pressed() -> void:
 func _on_Deck_One_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Deck One Info");
-	DeckVars.your_deck = "deck one"
+	DeckVars.opp_deck = "deck one"
 	set_process(false);
 	
 func _on_Deck_Two_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Deck Two Info");
-	DeckVars.your_deck = "deck Two"
+	DeckVars.opp_deck = "deck Two"
 	set_process(false);
 	
 func _on_Deck_Three_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Deck Three Info");
-	DeckVars.your_deck = "deck three"
+	DeckVars.opp_deck = "deck three"
 	set_process(false);
 	
 func _on_Deck_Four_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Deck Four Info");
-	DeckVars.your_deck = "deck Four"
+	DeckVars.opp_deck = "deck four"
 	set_process(false);
-
+	
 func _on_Confirm_Selection_Pressed() -> void:
-	get_tree().change_scene_to_file("res://Choose A Deck/choose_opp_deck.tscn");
+	get_tree().change_scene_to_file("res://ScenesandScripts/main.tscn");
 	set_process(false);

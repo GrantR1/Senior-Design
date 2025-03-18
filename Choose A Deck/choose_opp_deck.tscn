@@ -1,0 +1,278 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2bwwg12q6rjl"]
+
+[ext_resource type="Script" uid="uid://d18xootbwcja8" path="res://Choose A Deck/choose_opp_deck.gd" id="1_h57c5"]
+[ext_resource type="Texture2D" uid="uid://2gh27elaxmy7" path="res://Choose A Deck/cityscape.jpg" id="2_lh8ed"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v21l8"]
+texture = ExtResource("2_lh8ed")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftalx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfrca"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dj6qc"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v21l8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mw6n"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3onyq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftalx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7lgt"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itlho"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Choose Opp Deck" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h57c5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1933.0
+offset_bottom = 1101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_v21l8")
+
+[node name="Deck_One" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 358.0
+offset_top = 244.0
+offset_right = -1330.0
+offset_bottom = -716.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ftalx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v21l8")
+toggle_mode = true
+text = "Deck One"
+
+[node name="Deck_Two" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 679.0
+offset_top = 246.0
+offset_right = -1009.0
+offset_bottom = -714.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ftalx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mw6n")
+toggle_mode = true
+text = "Deck Two"
+
+[node name="Deck_Three" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1065.0
+offset_top = 245.0
+offset_right = -623.0
+offset_bottom = -715.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ftalx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3onyq")
+toggle_mode = true
+text = "Deck Three"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.146
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 619.0
+offset_top = 2358.7
+offset_right = -648.0
+offset_bottom = -945.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Choose Opponent's Deck"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Exit_Button" type="Button" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = 48.0
+offset_right = -1659.0
+offset_bottom = -902.0
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ftalx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ftalx")
+text = "      Exit      "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 337.0
+offset_top = 450.0
+offset_right = -312.0
+offset_bottom = -215.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Confirn_Selection" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 778.0
+offset_top = 939.0
+offset_right = -853.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ftalx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y7lgt")
+text = "Confirm Selection"
+
+[node name="Deck_Four" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1397.0
+offset_top = 247.0
+offset_right = -291.0
+offset_bottom = -713.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ftalx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_itlho")
+toggle_mode = true
+text = "Deck Four"
