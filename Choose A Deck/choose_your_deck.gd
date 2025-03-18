@@ -53,5 +53,5 @@ func _on_Deck_Four_Pressed() -> void:
 	set_process(false);
 
 func _on_Confirm_Selection_Pressed() -> void:
-	get_tree().change_scene_to_file("res://Choose A Deck/choose_opp_deck.tscn");
+	get_tree().change_scene_to_file("res://ScenesandScripts/main.tscn");
 	set_process(false);
