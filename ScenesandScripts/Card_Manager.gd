@@ -122,3 +122,6 @@ func get_card_with_highest_z_index(cards):
 			highest_z_card = currentCard
 			highest_z_index = currentCard.z_index
 	return highest_z_card
+
+func reset_guardian():
+	played_guardian_card_this_turn = false
