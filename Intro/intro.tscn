@@ -57,7 +57,7 @@ tracks/0/path = NodePath("RichTextLabel:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.566667, 2.03333, 2.78, 3.5),
+"times": PackedFloat32Array(0.5, 2.03333, 2.78, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0, 0.0]
@@ -65,7 +65,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fvpbx"]
 resource_name = "second-verse"
-length = 5.0
+length = 9.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -73,7 +73,7 @@ tracks/0/path = NodePath("RichTextLabel2:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.4, 2.93333, 3.5, 5),
+"times": PackedFloat32Array(0.4, 6.03333, 8.06667, 9),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0, 0.0]
@@ -126,10 +126,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_j7okx")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 566.0
-offset_top = 457.0
-offset_right = 1128.0
-offset_bottom = 665.0
+offset_left = 586.0
+offset_top = 528.0
+offset_right = 1153.0
+offset_bottom = 762.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 60
 text = "Welcome!
@@ -145,23 +145,24 @@ script = ExtResource("1_7jdn0")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 566.0
-offset_top = 457.0
-offset_right = 1418.0
-offset_bottom = 665.0
+offset_left = 579.0
+offset_top = 540.0
+offset_right = 1603.0
+offset_bottom = 748.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 60
-text = "You want to challenge me? 
+text = "So, you dare to challenge me?
+Let's see what you've got!
 "
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 566.0
-offset_top = 457.0
-offset_right = 1128.0
-offset_bottom = 665.0
+offset_left = 581.0
+offset_top = 548.0
+offset_right = 1143.0
+offset_bottom = 756.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 60
 text = "Good Luck! 

@@ -4,11 +4,11 @@ extends AnimationPlayer
 func _ready():
 	SceneTransitionAnimation.get_parent().get_node("ColorRect").color.a = 255;
 	SceneTransitionAnimation.play("fade_out");
-	await get_tree().create_timer(1.0).timeout;
+	await get_tree().create_timer(0.5).timeout;
 	play("example");
 	await get_tree().create_timer(4.0).timeout;
 	play('second-verse');
-	await get_tree().create_timer(5.5).timeout;
+	await get_tree().create_timer(10.0).timeout;
 	play('third-verse');
 	await get_tree().create_timer(4.0).timeout;
 	SceneTransitionAnimation.play("fade_in");
