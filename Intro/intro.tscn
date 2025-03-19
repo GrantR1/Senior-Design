@@ -1,0 +1,177 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckg43ob7mf1xd"]
+
+[ext_resource type="Texture2D" uid="uid://caqe2envjuurr" path="res://Intro/cityscape.jpg" id="1_1e4v0"]
+[ext_resource type="Script" uid="uid://cmhgv4yndkg3f" path="res://Intro/intro.gd" id="1_7jdn0"]
+[ext_resource type="Texture2D" uid="uid://c8i4jkhy53a13" path="res://Intro/atilla.png" id="3_j7okx"]
+[ext_resource type="PackedScene" uid="uid://d307lbhf8banm" path="res://Transitions/scene_transition_animation.tscn" id="4_fvpbx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7okx"]
+texture = ExtResource("1_1e4v0")
+
+[sub_resource type="Animation" id="Animation_j7okx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1e4v0"]
+resource_name = "example"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.566667, 2.03333, 2.78, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fvpbx"]
+resource_name = "second-verse"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 2.93333, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b4ujl"]
+resource_name = "third-verse"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.66667, 2.53333, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvpbx"]
+_data = {
+&"RESET": SubResource("Animation_j7okx"),
+&"example": SubResource("Animation_1e4v0"),
+&"second-verse": SubResource("Animation_fvpbx"),
+&"third-verse": SubResource("Animation_b4ujl")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+modulate = Color(0.41598, 0.41598, 0.41598, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j7okx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 457.0
+offset_right = 1128.0
+offset_bottom = 665.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Welcome!
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fvpbx")
+}
+script = ExtResource("1_7jdn0")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 457.0
+offset_right = 1418.0
+offset_bottom = 665.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "You come to challenge me? 
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 457.0
+offset_right = 1128.0
+offset_bottom = 665.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Good Luck! 
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="atilla" type="Sprite2D" parent="."]
+position = Vector2(362, 913)
+scale = Vector2(0.309104, 0.309104)
+texture = ExtResource("3_j7okx")
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("4_fvpbx")]
