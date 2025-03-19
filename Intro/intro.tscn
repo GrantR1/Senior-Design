@@ -151,7 +151,7 @@ offset_right = 1418.0
 offset_bottom = 665.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 60
-text = "You come to challenge me? 
+text = "You want to challenge me? 
 "
 visible_characters = 0
 visible_ratio = 0.0
@@ -170,8 +170,8 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="atilla" type="Sprite2D" parent="."]
-position = Vector2(362, 913)
-scale = Vector2(0.309104, 0.309104)
+position = Vector2(359.396, 906.896)
+scale = Vector2(0.307802, 0.306052)
 texture = ExtResource("3_j7okx")
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("4_fvpbx")]
