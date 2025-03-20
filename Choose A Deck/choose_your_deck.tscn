@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuqrjuahc6ar5"]
+[gd_scene load_steps=14 format=3 uid="uid://cuqrjuahc6ar5"]
 
 [ext_resource type="Script" uid="uid://08grfw3lgpjf" path="res://Choose A Deck/choose_your_deck.gd" id="1_7xuy1"]
 [ext_resource type="Texture2D" uid="uid://2gh27elaxmy7" path="res://Choose A Deck/cityscape.jpg" id="2_ftalx"]
+[ext_resource type="PackedScene" uid="uid://d307lbhf8banm" path="res://Transitions/scene_transition_animation.tscn" id="3_v21l8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v21l8"]
 texture = ExtResource("2_ftalx")
@@ -101,21 +102,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7xuy1")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1933.0
-offset_bottom = 1101.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_v21l8")
-
-[node name="Deck_One" type="Button" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 358.0
-offset_top = 244.0
-offset_right = -1330.0
-offset_bottom = -716.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_v21l8")
+
+[node name="Deck_One" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.185974
+anchor_top = 0.224471
+anchor_right = 0.309091
+anchor_bottom = 0.341306
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -130,16 +135,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_v21l8")
 toggle_mode = true
 text = "Deck One"
+metadata/_edit_use_anchors_ = true
 
 [node name="Deck_Two" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 679.0
-offset_top = 246.0
-offset_right = -1009.0
-offset_bottom = -714.0
+anchors_preset = -1
+anchor_left = 0.352727
+anchor_top = 0.226311
+anchor_right = 0.475844
+anchor_bottom = 0.343146
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -154,16 +158,16 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0mw6n")
 toggle_mode = true
 text = "Deck Two"
+metadata/_edit_use_anchors_ = true
 
 [node name="Deck_Three" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1065.0
-offset_top = 245.0
-offset_right = -623.0
-offset_bottom = -715.0
+anchors_preset = -1
+anchor_left = 0.553247
+anchor_top = 0.225391
+anchor_right = 0.676364
+anchor_bottom = 0.342226
+offset_bottom = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -178,20 +182,23 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3onyq")
 toggle_mode = true
 text = "Deck Three"
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -2.146
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 619.0
-offset_top = 2358.7
-offset_right = -648.0
-offset_bottom = -945.0
+anchor_left = 0.358
+anchor_right = 0.642
+anchor_bottom = 0.054
+offset_left = 0.849976
+offset_right = -0.850098
+offset_bottom = 17.302
 grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
 text = "Choose Your Deck"
@@ -200,12 +207,10 @@ uppercase = true
 
 [node name="Exit_Button" type="Button" parent="."]
 layout_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 62.0
-offset_top = 48.0
-offset_right = -1659.0
-offset_bottom = -902.0
+anchor_left = 0.0322078
+anchor_top = 0.0441582
+anchor_right = 0.138182
+anchor_bottom = 0.170193
 size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -218,28 +223,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ftalx")
 text = "      Exit      "
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 337.0
-offset_top = 450.0
-offset_right = -312.0
-offset_bottom = -215.0
+anchors_preset = -1
+anchor_left = 0.175065
+anchor_top = 0.413983
+anchor_right = 0.837922
+anchor_bottom = 0.802208
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Confirn_Selection" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 778.0
-offset_top = 939.0
-offset_right = -853.0
-offset_bottom = -41.0
+anchors_preset = -1
+anchor_left = 0.404156
+anchor_top = 0.863845
+anchor_right = 0.556883
+anchor_bottom = 0.962282
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -252,16 +255,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_y7lgt")
 text = "Confirm Selection"
+metadata/_edit_use_anchors_ = true
 
 [node name="Deck_Four" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1397.0
-offset_top = 247.0
-offset_right = -291.0
-offset_bottom = -713.0
+anchors_preset = -1
+anchor_left = 0.725714
+anchor_top = 0.227231
+anchor_right = 0.848831
+anchor_bottom = 0.344066
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -276,3 +278,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_itlho")
 toggle_mode = true
 text = "Deck Four"
+metadata/_edit_use_anchors_ = true
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("3_v21l8")]
