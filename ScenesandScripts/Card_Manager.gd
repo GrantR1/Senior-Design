@@ -12,6 +12,7 @@ var screen_size;
 var card_being_dragged;
 var is_hovering_on_card;
 var played_guardian_card_this_turn = false;
+var selected_guardian
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -30,19 +31,47 @@ func connect_card_signals(card):
 	card.connect("hovered_off", on_hovered_off_card)
 
 func on_hovered_over_card(card):
+	if card.card_slot_card_in:
+		return
 	if !is_hovering_on_card:
 		is_hovering_on_card = true
 		highlight_card(card, true);
 
 func on_hovered_off_card(card):
-	if !card.card_slot_card_in && !card_being_dragged:
-		highlight_card(card,false)
-		var new_card_hovered = raycast()
-		if new_card_hovered:
-			highlight_card(new_card_hovered, true)
+	if !card.defeated:
+		if !card.card_slot_card_in && !card_being_dragged:
+			highlight_card(card,false)
+			var new_card_hovered = raycast()
+			if new_card_hovered:
+				highlight_card(new_card_hovered, true)
+			else:
+				is_hovering_on_card = false
+func card_clicked(card):
+	if card.card_slot_card_in:
+		#card on battlefield
+		if $"../BattleManager".is_opponent_turn == false:
+			if $"../BattleManager".player_is_attacking == false:
+				if card not in $"../BattleManager".player_cards_that_attacked_this_turn:
+					if $"../BattleManager".opponent_cards_on_battlefield.size() == 0:
+						$"../BattleManager".direct_attack(card,"Player")
+						return
+					else:
+						select_card_for_battle(card)
+	else:
+		start_drag(card)
+func select_card_for_battle(card):
+	if selected_guardian:
+		if selected_guardian == card:
+			card.position.y += 20
+			selected_guardian = null
 		else:
-			is_hovering_on_card = false
-
+			selected_guardian.position.y += 20 #note check
+			selected_guardian = card 
+			card.position.y -= 20
+	else:
+		selected_guardian = card
+		card.position.y -= 20
+	
 func highlight_card(card, hovered):
 	if hovered:
 		card.scale = Vector2(CARD_BIGGER_SCALE, CARD_BIGGER_SCALE)
@@ -60,6 +89,7 @@ func finish_drag():
 	var card_slot_found = raycast_slot();
 	if card_slot_found and not card_slot_found.card_in_slot:
 		if card_being_dragged.card_type == card_slot_found.card_slot_type:
+			#print(card_slot_found.get_class())
 			#if the card type can go in the slot ^
 			if !played_guardian_card_this_turn:
 				#card scalling down
@@ -72,12 +102,18 @@ func finish_drag():
 				player_hand_ref.remove_card(card_being_dragged)
 				#card dragged into empty slot
 				card_being_dragged.position = card_slot_found.position
-				card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 				card_slot_found.card_in_slot = true
+				card_slot_found.get_node("Area2D/CollisionShape2D").disabled = true
+				$"../BattleManager".player_cards_on_battlefield.append(card_being_dragged)
 				card_being_dragged = null;
 				return
 	player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
 	card_being_dragged = null;
+
+func unselect_selected_guardian():
+	if selected_guardian:
+		selected_guardian.position.y += 20
+		selected_guardian = null
 
 func raycast_slot ():
 	var space_state = get_world_2d().direct_space_state;

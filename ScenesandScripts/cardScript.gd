@@ -6,6 +6,9 @@ signal hovered_off
 var hand_pos
 var card_slot_card_in
 var card_type
+var def
+var attack
+var defeated = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_parent().connect_card_signals(self); #all cards must be a child of child manager
