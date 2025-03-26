@@ -8,6 +8,8 @@ extends Control
 @onready var Deck_Four = $"Deck_Four" as Button;
 @onready var Confirm_Selection = $"Confirn_Selection" as Button;
 @onready var deckInfoText = $"RichTextLabel" as RichTextLabel;
+@onready var SceneTransitionAnimation = $SceneTransitionAnimation/AnimationPlayer;
+
 
 var selection = null;
 
@@ -53,5 +55,8 @@ func _on_Deck_Four_Pressed() -> void:
 	set_process(false);
 
 func _on_Confirm_Selection_Pressed() -> void:
-	get_tree().change_scene_to_file("res://ScenesandScripts/main.tscn");
+	#get_tree().change_scene_to_file("res://ScenesandScripts/main.tscn");
+	SceneTransitionAnimation.play("fade_in");
+	await get_tree().create_timer(0.5).timeout;
+	get_tree().change_scene_to_file("res://Intro/intro.tscn");
 	set_process(false);
