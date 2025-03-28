@@ -143,6 +143,7 @@ func destroy_card(card, card_owner):
 		newPosit = $"../OponentDiscard".position
 		if card in opponent_cards_on_battlefield:
 			opponent_cards_on_battlefield.erase(card)
+			empty_guardian_card_slot.append(card.card_slot_card_in)
 	print("HUHHHH")
 	card.card_slot_card_in.card_in_slot = false #error hmm
 	#print(card.card_slot_card_in.get_class())
