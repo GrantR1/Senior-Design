@@ -144,7 +144,7 @@ func destroy_card(card, card_owner):
 		if card in opponent_cards_on_battlefield:
 			opponent_cards_on_battlefield.erase(card)
 	print("HUHHHH")
-	#card.card_slot_card_in.card_in_slot = false #error hmm
+	card.card_slot_card_in.card_in_slot = false #error hmm
 	#print(card.card_slot_card_in.get_class())
 	card.card_slot_card_in = null
 	var tween = get_tree().create_tween()
