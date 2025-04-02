@@ -3,6 +3,7 @@ var battle_timer
 const STARTING_HEALTH = 10
 const BATTLE_POS_OFFSET = 25
 var empty_guardian_card_slot = []
+var empty_spell_card_slot = []
 var opponent_cards_on_battlefield = []
 var player_cards_on_battlefield = []
 var player_cards_that_attacked_this_turn = []
@@ -17,6 +18,10 @@ func _ready () -> void:
 	battle_timer = $"../BattleTimer"
 	battle_timer.one_shot = true
 	battle_timer.wait_time = 1.0
+	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot")
+	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot2")
+	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot3")
+	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot4")
 	empty_guardian_card_slot.append($"../CardSlots/EnemyCardslot5")
 	empty_guardian_card_slot.append($"../CardSlots/EnemyCardslot6")
 	empty_guardian_card_slot.append($"../CardSlots/EnemyCardslot7")
