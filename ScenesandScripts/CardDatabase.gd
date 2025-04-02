@@ -5,5 +5,5 @@ const CARDS = { #attack #defense #cost, card type
 	"SS Stevens victory": [0, 5,3, "Guardian"],
 	"Henry Morton": [1,2,2, "Spell"],
 	"University Center Complex": [0, 2, 1, "Guardian"],
-	"Sleep Deprived": [0,0,2, "Spell"]
+	"Sleep Deprived": [0,1,2, "Spell"]
 }
