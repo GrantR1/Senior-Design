@@ -58,71 +58,75 @@ func opponent_turn ():
 	end_opponent_turn()
 func direct_attack(attacking_card, Attacker):
 	print("Direct Hit")
-	var new_pos_y
-	if Attacker == "Opponent":
-		new_pos_y = 1080
-	else:
-		$"../EndTurnButton".disabled = true
-		$"../EndTurnButton".visible = false
-		player_is_attacking = true
-		new_pos_y = 0
-		player_cards_that_attacked_this_turn.append(attacking_card)
-	var new_pos = Vector2(attacking_card.position.x,new_pos_y)
-	attacking_card.z_index = 5
-	var tween = get_tree().create_tween()
-	tween.tween_property(attacking_card, "position", new_pos, CARD_SPEED)
-	await wait(0.15)
-	if Attacker == "Opponent":
-		
-		player_health = max(0,player_health - attacking_card.attack)
-		$"../PlayerHealth".text = str(player_health)
-	else:
-		opponent_health = max(0,opponent_health - attacking_card.attack)
-		$"../OpponentHealth".text = str(opponent_health)
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
-	attacking_card.z_index = 0
-	await wait(1)
-	if Attacker == "Player":
-		player_is_attacking = false
-		$"../EndTurnButton".disabled = false
-		$"../EndTurnButton".visible = true
+	if attacking_card.card_type == "Spell":
+		var new_pos_y
+		if Attacker == "Opponent":
+			new_pos_y = 1080
+		else:
+			$"../EndTurnButton".disabled = true
+			$"../EndTurnButton".visible = false
+			player_is_attacking = true
+			new_pos_y = 0
+			player_cards_that_attacked_this_turn.append(attacking_card)
+		var new_pos = Vector2(attacking_card.position.x,new_pos_y)
+		attacking_card.z_index = 5
+		var tween = get_tree().create_tween()
+		tween.tween_property(attacking_card, "position", new_pos, CARD_SPEED)
+		await wait(0.15)
+		if Attacker == "Opponent":
+			
+			player_health = max(0,player_health - attacking_card.attack)
+			$"../PlayerHealth".text = str(player_health)
+		else:
+			opponent_health = max(0,opponent_health - attacking_card.attack)
+			$"../OpponentHealth".text = str(opponent_health)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
+		attacking_card.z_index = 0
+		await wait(1)
+		if Attacker == "Player":
+			player_is_attacking = false
+			$"../EndTurnButton".disabled = false
+			$"../EndTurnButton".visible = true
 	
 func attack(attacking_card, defending_card, attacker):
+	if attacking_card.card_type == "Guardian":
+		return
 	if attacker == "Player":
 		player_is_attacking = true
 		$"../EndTurnButton".disabled = true
 		$"../EndTurnButton".visible = false
 		$"../Card Manager".selected_guardian = null
 		player_cards_that_attacked_this_turn.append(attacking_card)
-	attacking_card.z_index = 5
-	var newPosit = Vector2(defending_card.hand_pos.x, defending_card.hand_pos.y + BATTLE_POS_OFFSET)
-	var tween = get_tree().create_tween()
-	tween.tween_property(attacking_card, "position", newPosit, CARD_SPEED)
-	await wait(0.15)
-	var tween2 = get_tree().create_tween()
-	tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
-	#card damage
-	defending_card.def = max(0,defending_card.def - attacking_card.attack)
-	defending_card.get_node("Def").text = str(defending_card.def)
-	
-	attacking_card.def = max(0,attacking_card.def - defending_card.attack)
-	attacking_card.get_node("Def").text = str(attacking_card.def)
-	await wait(1)
-	attacking_card.z_index = 0
-	var card_was_destroyed = false
-	#destroy cards if def = 0
-	if attacking_card.def == 0:
-		destroy_card(attacking_card, attacker)
-		card_was_destroyed = true
-	if defending_card.def == 0: #might have to change this
-		if attacker == "Player":
-			destroy_card(defending_card, "Opponent")
-		else:
-			destroy_card(defending_card, "Player")
-		card_was_destroyed = true
-	if card_was_destroyed:
+	if attacking_card.card_type == "Spell":
+		attacking_card.z_index = 5
+		var newPosit = Vector2(defending_card.hand_pos.x, defending_card.hand_pos.y + BATTLE_POS_OFFSET)
+		var tween = get_tree().create_tween()
+		tween.tween_property(attacking_card, "position", newPosit, CARD_SPEED)
+		await wait(0.15)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
+		#card damage
+		defending_card.def = max(0,defending_card.def - attacking_card.attack)
+		defending_card.get_node("Def").text = str(defending_card.def)
+		
+		attacking_card.def = max(0,attacking_card.def - defending_card.attack)
+		attacking_card.get_node("Def").text = str(attacking_card.def)
 		await wait(1)
+		attacking_card.z_index = 0
+		var card_was_destroyed = false
+		#destroy cards if def = 0
+		if attacking_card.def == 0:
+			destroy_card(attacking_card, attacker)
+			card_was_destroyed = true
+		if defending_card.def == 0: #might have to change this
+			if attacker == "Player":
+				destroy_card(defending_card, "Opponent")
+			else:
+				destroy_card(defending_card, "Player")
+			card_was_destroyed = true
+		if card_was_destroyed:
+			await wait(1)
 	if attacker == "Player":
 		player_is_attacking = false
 		$"../EndTurnButton".disabled = false
@@ -166,7 +170,7 @@ func try_play_card_attack():
 	
 	var card_highest_attack = opponent_hand[0]
 	for card in opponent_hand:
-		if card.attack > card_highest_attack.attack:
+		if card.attack > card_highest_attack.attack and card.card_type != "Guardian":
 			card_highest_attack = card
 	var tween = get_tree().create_tween()
 	tween.tween_property(card_highest_attack, "position", random_guardian_card_slot.position, CARD_SPEED)

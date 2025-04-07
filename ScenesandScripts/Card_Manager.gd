@@ -60,6 +60,8 @@ func card_clicked(card):
 	else:
 		start_drag(card)
 func select_card_for_battle(card):
+	if card.card_type == "Guardian":
+		return  # Skip if it's a guardian card
 	if selected_guardian:
 		if selected_guardian == card:
 			card.position.y += 20
