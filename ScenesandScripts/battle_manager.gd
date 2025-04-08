@@ -162,24 +162,37 @@ func destroy_card(card, card_owner):
 	
 func try_play_card_attack():
 	var opponent_hand = $"../EnemyHand".opponent_hand
-	if opponent_hand.size() == 0:
+	if opponent_hand.size()==0:
 		end_opponent_turn()
 		return
-	var random_guardian_card_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
-	empty_guardian_card_slot.erase(random_guardian_card_slot)
 	
-	var card_highest_attack = opponent_hand[0]
+	var card_to_play = opponent_hand[0]
 	for card in opponent_hand:
-		if card.attack > card_highest_attack.attack and card.card_type != "Guardian":
-			card_highest_attack = card
+		if card.attack > card_to_play.attack and card.card_type != "Guardian":
+			card_to_play = card
+	
+	var pick_slot
+	if card_to_play.card_type == "Spell":
+		pick_slot = empty_spell_card_slot[randi_range(0, empty_spell_card_slot.size()-1)]
+		empty_spell_card_slot.erase(pick_slot)
+	elif card_to_play.card_type == "Guardian":
+		pick_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
+		empty_guardian_card_slot.erase(pick_slot)
+	else:
+		end_opponent_turn()
+		return
+	
 	var tween = get_tree().create_tween()
-	tween.tween_property(card_highest_attack, "position", random_guardian_card_slot.position, CARD_SPEED)
+	tween.tween_property(card_to_play, "position", pick_slot.position, CARD_SPEED)
 	var tween2 = get_tree().create_tween()
-	tween2.tween_property(card_highest_attack, "scale", Vector2(SMALL_CARD_SCALE, SMALL_CARD_SCALE), CARD_SPEED)
-	card_highest_attack.get_node("AnimationPlayer").play("card_flip")
-	$"../EnemyHand".remove_card(card_highest_attack)
-	card_highest_attack.card_slot_card_in = random_guardian_card_slot
-	opponent_cards_on_battlefield.append(card_highest_attack)
+	tween2.tween_property(card_to_play, "scale", Vector2(SMALL_CARD_SCALE, SMALL_CARD_SCALE), CARD_SPEED)
+	
+	card_to_play.get_node("AnimationPlayer").play("card_flip")
+	$"../EnemyHand".remove_card(card_to_play)
+	
+	card_to_play.card_slot_card_in = pick_slot
+	opponent_cards_on_battlefield.append(card_to_play)
+	
 	await wait(1)
 
 func _on_end_turn_button_pressed() -> void:
