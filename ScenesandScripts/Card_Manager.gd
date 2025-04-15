@@ -110,7 +110,7 @@ func finish_drag():
 				if card_being_dragged.ability_script == null:
 					pass
 				else:
-					card_being_dragged.ability_script.trigger_ability()
+					card_being_dragged.ability_script.trigger_ability($"../BattleManager")
 				card_being_dragged = null;
 				return
 	player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
