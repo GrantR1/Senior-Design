@@ -107,6 +107,10 @@ func finish_drag():
 				card_slot_found.card_in_slot = true
 				card_slot_found.get_node("Area2D/CollisionShape2D").disabled = true
 				$"../BattleManager".player_cards_on_battlefield.append(card_being_dragged)
+				if card_being_dragged.ability_script == null:
+					pass
+				else:
+					card_being_dragged.ability_script.trigger_ability()
 				card_being_dragged = null;
 				return
 	player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
