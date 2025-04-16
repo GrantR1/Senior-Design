@@ -1,3 +1,4 @@
+extends Node
 const CARDS = { #attack #defense #cost, card type, abiliy text, ability script
 	"Teachers Assistant" : [2,1,1, "Spell", null, null], 
 	"The Professor" : [1,3,3, "Spell", null, null], 

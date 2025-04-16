@@ -18,6 +18,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 DeckVars="*res://deck_vars.gd"
+CardDatabase="*res://ScenesandScripts/CardDatabase.gd"
 
 [display]
 

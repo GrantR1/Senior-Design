@@ -1,7 +1,8 @@
 extends Node2D
 
 const CARD_SCENE_PATH = "res://ScenesandScripts/EnemyCard.tscn"
-var opponent_deck = ["Teachers Assistant", "The Professor", "Moody Student", "SS Stevens victory","Henry Morton", "University Center Complex", "Sleep Deprived"]
+var opponent_deck = []
+var original_deck = []
 const STARTING_HAND_SIZE = 5
 var card_database_reference
 const CARD_DRAW_SPEED = .5
@@ -9,6 +10,9 @@ const CARD_DRAW_SPEED = .5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	for card_name in CardDatabase.CARDS.keys():
+		original_deck.append(card_name)
+	opponent_deck = original_deck.duplicate()
 	opponent_deck.shuffle()
 	$RichTextLabel.text = str(opponent_deck.size())
 	card_database_reference = preload("res://ScenesandScripts/CardDatabase.gd")
@@ -24,8 +28,8 @@ func draw_card():
 	opponent_deck.erase(card_drawn_name)
 	
 	if opponent_deck.size() == 0:
-		$Sprite2D.visible = false
-		$RichTextLabel.visible = false
+		opponent_deck = original_deck.duplicate()
+		opponent_deck.shuffle()
 	$RichTextLabel.text = str(opponent_deck.size())
 	
 	var card_scene = preload(CARD_SCENE_PATH)
