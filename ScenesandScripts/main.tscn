@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ciwgdbra2wgnf"]
+[gd_scene load_steps=16 format=3 uid="uid://ciwgdbra2wgnf"]
 
 [ext_resource type="Script" uid="uid://dvt2ejwepwy0n" path="res://ScenesandScripts/Card_Manager.gd" id="1_phl1v"]
 [ext_resource type="Script" uid="uid://dhixoxfbxace8" path="res://ScenesandScripts/SpellCard_slot.gd" id="3_cggtr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://fw6bgj21rwwk" path="res://ScenesandScripts/battle_manager.gd" id="10_s7owu"]
 [ext_resource type="Script" uid="uid://bjbbls5sh7y62" path="res://ScenesandScripts/Enemy_Hand.gd" id="12_22two"]
 [ext_resource type="Texture2D" uid="uid://b1p8t7566xtfv" path="res://Sprites/cardslot.png" id="13_22two"]
+[ext_resource type="Texture2D" uid="uid://r0hct0dr146d" path="res://Sprites/manhattan.png" id="14_emsc3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c38p5"]
 size = Vector2(320, 448)
@@ -199,5 +200,11 @@ scale = Vector2(0.6, 0.6)
 [node name="Sprite2D" type="Sprite2D" parent="OponentDiscard"]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("13_22two")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(984, 352)
+scale = Vector2(4, 4)
+texture = ExtResource("14_emsc3")
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
