@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckg43ob7mf1xd"]
 
-[ext_resource type="Texture2D" uid="uid://caqe2envjuurr" path="res://Intro/cityscape.jpg" id="1_1e4v0"]
 [ext_resource type="Script" uid="uid://cmhgv4yndkg3f" path="res://Intro/intro.gd" id="1_7jdn0"]
+[ext_resource type="Texture2D" uid="uid://cnthqsgpq2waj" path="res://Intro/manhattan.png" id="1_fvpbx"]
 [ext_resource type="Texture2D" uid="uid://c8i4jkhy53a13" path="res://Intro/atilla.png" id="3_j7okx"]
 [ext_resource type="PackedScene" uid="uid://d307lbhf8banm" path="res://Transitions/scene_transition_animation.tscn" id="4_fvpbx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7okx"]
-texture = ExtResource("1_1e4v0")
+texture = ExtResource("1_fvpbx")
 
 [sub_resource type="Animation" id="Animation_j7okx"]
 length = 0.001
