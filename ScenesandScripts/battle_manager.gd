@@ -4,6 +4,7 @@ const STARTING_HEALTH = 10
 const BATTLE_POS_OFFSET = 25
 var empty_guardian_card_slot = []
 var empty_spell_card_slot = []
+var used_guardian_slot = []
 var opponent_cards_on_battlefield = []
 var player_cards_on_battlefield = []
 var player_cards_that_attacked_this_turn = []
@@ -11,14 +12,15 @@ var player_health
 var opponent_health
 var is_opponent_turn = false
 var player_is_attacking = false
-
+var player_guardians = {}
+var opponent_guardians = {}
 const SMALL_CARD_SCALE = 0.5
 const CARD_SPEED = 0.2
 func _ready () -> void:
 	battle_timer = $"../BattleTimer"
 	battle_timer.one_shot = true
 	battle_timer.wait_time = 1.0
-	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot")
+	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot1")
 	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot2")
 	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot3")
 	empty_spell_card_slot.append($"../CardSlots/EnemyCardslot4")
@@ -26,6 +28,14 @@ func _ready () -> void:
 	empty_guardian_card_slot.append($"../CardSlots/EnemyCardslot6")
 	empty_guardian_card_slot.append($"../CardSlots/EnemyCardslot7")
 	empty_guardian_card_slot.append($"../CardSlots/EnemyCardslot8")
+	player_guardians[$"../CardSlots/Cardslot"] = $"../CardSlots/Cardslot5"
+	player_guardians[$"../CardSlots/Cardslot2"] = $"../CardSlots/Cardslot6"
+	player_guardians[$"../CardSlots/Cardslot3"] = $"../CardSlots/Cardslot7"
+	player_guardians[$"../CardSlots/Cardslot4"] = $"../CardSlots/Cardslot8"
+	opponent_guardians[$"../CardSlots/EnemyCardslot1"] = $"../CardSlots/EnemyCardslot5"
+	opponent_guardians[$"../CardSlots/EnemyCardslot2"] = $"../CardSlots/EnemyCardslot6"
+	opponent_guardians[$"../CardSlots/EnemyCardslot3"] = $"../CardSlots/EnemyCardslot7"
+	opponent_guardians[$"../CardSlots/EnemyCardslot4"] = $"../CardSlots/EnemyCardslot8"
 	player_health = STARTING_HEALTH
 	$"../PlayerHealth".text = str(player_health)
 	opponent_health = STARTING_HEALTH
@@ -41,7 +51,7 @@ func opponent_turn ():
 		battle_timer.start()
 		await battle_timer.timeout
 	#wait 1 second
-	if empty_guardian_card_slot.size() != 0:
+	if empty_guardian_card_slot.size() != 0 or empty_spell_card_slot.size() != 0:
 		await try_play_card_attack()
 	#if any opponents cards to attack
 	if opponent_cards_on_battlefield.size() != 0:
@@ -50,7 +60,14 @@ func opponent_turn ():
 			if player_cards_on_battlefield.size() != 0:
 				#attack
 				var card_to_attack = player_cards_on_battlefield.pick_random()
-				await attack(card, card_to_attack, "Opponent")
+				if card_to_attack.card_type == "Guardian":
+					await attack(card, card_to_attack, "Opponent")
+				elif player_guardians[card_to_attack.card_slot_card_in].card_in_slot:
+					for player_card in dupe:
+						if player_card.card_slot_card_in == player_guardians[card_to_attack.card_slot_card_in]:
+							await attack(card,player_card,"Opponent")
+				else:
+					await attack(card,card_to_attack,"Opponent")
 			else:
 				#preform direct attack
 				await direct_attack(card, "Opponent")
@@ -98,6 +115,12 @@ func attack(attacking_card, defending_card, attacker):
 		$"../EndTurnButton".visible = false
 		$"../Card Manager".selected_guardian = null
 		player_cards_that_attacked_this_turn.append(attacking_card)
+		if defending_card.card_type == "Spell":
+			if opponent_guardians[defending_card.card_slot_card_in].card_in_slot:
+				for card in opponent_cards_on_battlefield:
+					if card.card_slot_card_in == opponent_guardians[defending_card.card_slot_card_in]:
+						defending_card = card
+						break
 	if attacking_card.card_type == "Spell":
 		attacking_card.z_index = 5
 		var newPosit = Vector2(defending_card.hand_pos.x, defending_card.hand_pos.y + BATTLE_POS_OFFSET)
@@ -156,6 +179,7 @@ func destroy_card(card, card_owner):
 				empty_spell_card_slot.append(card.card_slot_card_in)
 			else:
 				empty_guardian_card_slot.append(card.card_slot_card_in)
+				used_guardian_slot.erase(card.card_slot_card_in)
 	print("HUHHHH")
 	card.card_slot_card_in.card_in_slot = false #error hmm
 	#print(card.card_slot_card_in.get_class())
@@ -170,17 +194,30 @@ func try_play_card_attack():
 		return
 	
 	var card_to_play = opponent_hand[0]
-	for card in opponent_hand:
-		if card.attack > card_to_play.attack and card.card_type != "Guardian":
-			card_to_play = card
+	var has_guardian
+	if (empty_spell_card_slot.size() == 4 and empty_guardian_card_slot.size() > 2) || empty_spell_card_slot.size() == 0:
+		for card in opponent_hand:
+			if card.def > card_to_play.def and card.card_type == "Guardian":
+				card_to_play = card
+				
+	elif empty_spell_card_slot.size() != 0:
+		for card in opponent_hand:
+			if card.attack > card_to_play.attack and card.card_type != "Guardian":
+				card_to_play = card
 	
 	var pick_slot
 	if card_to_play.card_type == "Spell":
-		pick_slot = empty_spell_card_slot[randi_range(0, empty_spell_card_slot.size()-1)]
-		empty_spell_card_slot.erase(pick_slot)
+		if empty_spell_card_slot.size() != 0:
+			pick_slot = empty_spell_card_slot[randi_range(0, empty_spell_card_slot.size()-1)]	
+			empty_spell_card_slot.erase(pick_slot)
+		else:
+			end_opponent_turn() 
+			return
 	elif card_to_play.card_type == "Guardian":
-		pick_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
-		empty_guardian_card_slot.erase(pick_slot)
+		if empty_guardian_card_slot.size() != 0:
+			pick_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
+			empty_guardian_card_slot.erase(pick_slot)
+			used_guardian_slot.append(pick_slot)
 	else:
 		end_opponent_turn()
 		return
@@ -194,6 +231,7 @@ func try_play_card_attack():
 	$"../EnemyHand".remove_card(card_to_play)
 	
 	card_to_play.card_slot_card_in = pick_slot
+	card_to_play.card_slot_card_in.card_in_slot = true; 
 	opponent_cards_on_battlefield.append(card_to_play)
 	
 	await wait(1)

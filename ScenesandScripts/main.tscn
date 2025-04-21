@@ -31,7 +31,7 @@ script = ExtResource("12_22two")
 
 [node name="CardSlots" type="Node2D" parent="."]
 
-[node name="Cardslot" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot3" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 z_index = -3
 position = Vector2(1080, 750)
 script = ExtResource("3_cggtr")
@@ -41,17 +41,17 @@ z_index = -3
 position = Vector2(840, 750)
 script = ExtResource("3_cggtr")
 
-[node name="Cardslot3" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot4" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 z_index = -3
 position = Vector2(1320, 750)
 script = ExtResource("3_cggtr")
 
-[node name="Cardslot4" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 z_index = -3
 position = Vector2(600, 750)
 script = ExtResource("3_cggtr")
 
-[node name="Cardslot5" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot7" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 z_index = -3
 position = Vector2(1080, 545)
 script = ExtResource("4_jqgo3")
@@ -61,22 +61,22 @@ z_index = -3
 position = Vector2(840, 545)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot7" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot8" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 z_index = -3
 position = Vector2(1320, 545)
 script = ExtResource("4_jqgo3")
 
-[node name="Cardslot8" parent="CardSlots" instance=ExtResource("3_qwa6h")]
+[node name="Cardslot5" parent="CardSlots" instance=ExtResource("3_qwa6h")]
 z_index = -3
 position = Vector2(600, 545)
 script = ExtResource("4_jqgo3")
 
-[node name="EnemyCardslot" parent="CardSlots" instance=ExtResource("5_80h8m")]
+[node name="EnemyCardslot1" parent="CardSlots" instance=ExtResource("5_80h8m")]
 z_index = -3
 position = Vector2(600, 125)
 script = ExtResource("3_cggtr")
 
-[node name="EnemyCardslot2" parent="CardSlots" instance=ExtResource("5_80h8m")]
+[node name="EnemyCardslot4" parent="CardSlots" instance=ExtResource("5_80h8m")]
 z_index = -3
 position = Vector2(1320, 125)
 script = ExtResource("3_cggtr")
@@ -86,7 +86,7 @@ z_index = -3
 position = Vector2(1080, 125)
 script = ExtResource("3_cggtr")
 
-[node name="EnemyCardslot4" parent="CardSlots" instance=ExtResource("5_80h8m")]
+[node name="EnemyCardslot2" parent="CardSlots" instance=ExtResource("5_80h8m")]
 z_index = -3
 position = Vector2(840, 125)
 script = ExtResource("3_cggtr")
@@ -96,7 +96,7 @@ z_index = -3
 position = Vector2(600, 330)
 script = ExtResource("4_jqgo3")
 
-[node name="EnemyCardslot6" parent="CardSlots" instance=ExtResource("5_80h8m")]
+[node name="EnemyCardslot8" parent="CardSlots" instance=ExtResource("5_80h8m")]
 z_index = -3
 position = Vector2(1320, 330)
 script = ExtResource("4_jqgo3")
@@ -106,7 +106,7 @@ z_index = -3
 position = Vector2(1080, 330)
 script = ExtResource("4_jqgo3")
 
-[node name="EnemyCardslot8" parent="CardSlots" instance=ExtResource("5_80h8m")]
+[node name="EnemyCardslot6" parent="CardSlots" instance=ExtResource("5_80h8m")]
 z_index = -3
 position = Vector2(840, 330)
 script = ExtResource("4_jqgo3")
