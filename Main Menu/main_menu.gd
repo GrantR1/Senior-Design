@@ -58,7 +58,7 @@ func _on_donate_pressed() -> void:
 	#Function for the donate button which will 
 	#take the user to the website to donate
 
-	OS.shell_open("https://give.stevens.edu/2025-day-of-giving");
+	OS.shell_open("https://give.stevens.edu/campaigns/40935/donations/");
 
 func _on_stevensDayOfDiving_website_pressed() -> void:
 	#Function for the stevens day of giving website button
