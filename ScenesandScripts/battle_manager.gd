@@ -94,12 +94,23 @@ func direct_attack(attacking_card, Attacker):
 			
 			player_health = max(0,player_health - attacking_card.attack)
 			$"../PlayerHealth".text = str(player_health)
+			
 		else:
 			opponent_health = max(0,opponent_health - attacking_card.attack)
 			$"../OpponentHealth".text = str(opponent_health)
+			
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
 		attacking_card.z_index = 0
+		if opponent_health <= 0 :
+				await wait(1.0)
+				get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
+				return
+		#Check if player health is 0
+		if player_health <= 0:
+			await wait(1.0)
+			get_tree().change_scene_to_file("res://Lose Screen/lose_scene.tscn");
+			return
 		await wait(1)
 		if Attacker == "Player":
 			player_is_attacking = false

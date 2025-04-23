@@ -1,6 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd5dmkm3q5lil"]
+[gd_scene load_steps=10 format=3 uid="uid://cd5dmkm3q5lil"]
 
 [ext_resource type="Script" uid="uid://df1giejinkg3c" path="res://Win Screen/win_scene.gd" id="1_pdaet"]
+[ext_resource type="Texture2D" uid="uid://cx5yk0jp7w7ls" path="res://Lose Screen/manhattan.png" id="2_2hbco"]
+[ext_resource type="FontFile" uid="uid://b4uysf27rq28y" path="res://Lose Screen/TT Octosquares Trial Regular.ttf" id="2_l1vsf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0rhr"]
+texture = ExtResource("2_2hbco")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e81tt"]
 
@@ -33,7 +38,7 @@ shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2tlrm"]
 
-[node name="Win_Scene" type="Control"]
+[node name="Lose_Scene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,16 +47,27 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pdaet")
 
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -6.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_i0rhr")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -197.0
-offset_right = 197.0
-offset_bottom = 165.0
+offset_left = -229.0
+offset_top = 30.0
+offset_right = 229.0
+offset_bottom = 198.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1vsf")
 theme_override_font_sizes/font_size = 120
 text = "SORRY"
 
@@ -60,12 +76,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -331.0
-offset_top = 158.0
-offset_right = 331.0
-offset_bottom = 323.0
+offset_left = -836.0
+offset_top = 191.0
+offset_right = 836.0
+offset_bottom = 359.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_l1vsf")
 theme_override_font_sizes/font_size = 120
 text = "BETTER LUCK NEXT TIME"
 
@@ -76,10 +93,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -125.0
-offset_right = 311.0
-offset_bottom = 265.0
+offset_left = -264.5
+offset_top = -7.0
+offset_right = 264.5
+offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
@@ -108,7 +125,7 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.917647, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 65
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2tlrm")
 text = "Donate"
 underline = 1

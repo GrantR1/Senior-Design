@@ -5,7 +5,7 @@ func _ready():
 
 
 func _on_play_again_pressed() -> void:
-	get_tree().change_scene_to_file("res://Main Menu/main_menu.tscn");
+	get_tree().change_scene_to_file("res://Choose A Deck/choose_your_deck.tscn");
 
 
 func _on_donate_pressed() -> void:
