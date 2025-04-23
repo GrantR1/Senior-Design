@@ -11,38 +11,23 @@ var drawn_card_this_turn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#match DeckVars.your_deck:
-		#"deck one": #for testing purposes
-			#original_deck = ["Teachers Assistant", "The Professor",
-			#"Moody Student", "SS Stevens victory", "Henry Morton",
-			#"University Center Complex", "Sleep Deprived"]
-		#"deck one": #Student Deck
-			#original_deck = ["Undergrad", "The Professor",
-			#"Study Buddy", "Atilla the Duck", "Stevens' S.C. Williams Library", 
-			#"University Center Complex", "Grading Curve", "Extra Credit",
-			#"Prepared to Learn", "Failed Test", "Honor Code Validation", "Study Session"]
-		#"deck Two": #Statistics
-			#original_deck = ["Teachers Assistant", "The Professor", 
-			#"Moody Student", "S.S. Stevens", "Pop Quiz",
-			#"Stevens Campus Police", "Extra Credit", "Failed Test",
-			#"Study Session", "Tough Classes", "MA-222 Probability and Statistics",
-			#"MA-623 Stochastic Processes"]
-		#"deck three": #Mixed
-			#original_deck = ["Study Buddy", "Atilla the Duck", 
-			#"S.S. Stevens", "SS Stevens victory", "Walker Gymnasium",
-			#"TI-Nspire Graphing Calculator", "Failed Test", "A+ Test",
-			#"Sleep Deprived", "Tough Classes", "Honor Code Violation"]
-		#"deck Four": #History
-			#original_deck = ["Edwin A. Stevens", "William H. Perice",
-			#"The Center for Maritime Systems at Stevens", "Stevens' S.C. Williams Library", 
-			#"Walker Gymnasium", "Charles V. Schaefer Jr. School of Engineering and Science", 
-			#"National Center for Secure and Resilient", "Office of Innovation and Entrepreneruship", 
-			#"The Center for Innovation in Engineering and Science Education", 
-			#"The Center for Environmental Systems", "The Highly Filled Materials Institute"]
+	match DeckVars.your_deck:
+		"deck one": #Student Deck
+			for card_name in CardDatabase.CARDS2.keys():
+				original_deck.append(card_name)
+		"deck Two": #Statistics
+			for card_name in CardDatabase.CARDS3.keys():
+				original_deck.append(card_name)
+		"deck three": #Mixed
+			for card_name in CardDatabase.CARDS4.keys():
+				original_deck.append(card_name)
+		"deck Four": #History
+			for card_name in CardDatabase.CARDS5.keys():
+				original_deck.append(card_name)
 	
-	for card_name in CardDatabase.CARDS.keys():
-		original_deck.append(card_name)
-	print("Deck selected: ", DeckVars.your_deck)
+	#for card_name in CardDatabase.CARDS.keys():
+		#original_deck.append(card_name)
+	
 	player_deck = original_deck.duplicate()
 	player_deck.shuffle()
 	#$RichTextLabel.text = str(player_deck.size())
