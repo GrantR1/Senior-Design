@@ -12,7 +12,7 @@ var drawn_card_this_turn = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#match DeckVars.your_deck:
-		#'deck one': #for testing purposes
+		#"deck one": #for testing purposes
 			#original_deck = ["Teachers Assistant", "The Professor",
 			#"Moody Student", "SS Stevens victory", "Henry Morton",
 			#"University Center Complex", "Sleep Deprived"]
@@ -21,7 +21,7 @@ func _ready() -> void:
 			#"Study Buddy", "Atilla the Duck", "Stevens' S.C. Williams Library", 
 			#"University Center Complex", "Grading Curve", "Extra Credit",
 			#"Prepared to Learn", "Failed Test", "Honor Code Validation", "Study Session"]
-		#"deck two": #Statistics
+		#"deck Two": #Statistics
 			#original_deck = ["Teachers Assistant", "The Professor", 
 			#"Moody Student", "S.S. Stevens", "Pop Quiz",
 			#"Stevens Campus Police", "Extra Credit", "Failed Test",
@@ -32,7 +32,7 @@ func _ready() -> void:
 			#"S.S. Stevens", "SS Stevens victory", "Walker Gymnasium",
 			#"TI-Nspire Graphing Calculator", "Failed Test", "A+ Test",
 			#"Sleep Deprived", "Tough Classes", "Honor Code Violation"]
-		#"deck four": #History
+		#"deck Four": #History
 			#original_deck = ["Edwin A. Stevens", "William H. Perice",
 			#"The Center for Maritime Systems at Stevens", "Stevens' S.C. Williams Library", 
 			#"Walker Gymnasium", "Charles V. Schaefer Jr. School of Engineering and Science", 
@@ -42,7 +42,7 @@ func _ready() -> void:
 	
 	for card_name in CardDatabase.CARDS.keys():
 		original_deck.append(card_name)
-	
+	print("Deck selected: ", DeckVars.your_deck)
 	player_deck = original_deck.duplicate()
 	player_deck.shuffle()
 	$RichTextLabel.text = str(player_deck.size())

@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://cuqrjuahc6ar5"]
 
 [ext_resource type="Script" uid="uid://08grfw3lgpjf" path="res://Choose A Deck/choose_your_deck.gd" id="1_7xuy1"]
-[ext_resource type="Texture2D" uid="uid://2gh27elaxmy7" path="res://Choose A Deck/cityscape.jpg" id="2_ftalx"]
+[ext_resource type="Texture2D" uid="uid://cyl5vol7uaevy" path="res://Choose A Deck/manhattan.png" id="2_v21l8"]
 [ext_resource type="PackedScene" uid="uid://d307lbhf8banm" path="res://Transitions/scene_transition_animation.tscn" id="3_v21l8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v21l8"]
-texture = ExtResource("2_ftalx")
+texture = ExtResource("2_v21l8")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftalx"]
 
@@ -111,6 +111,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
+modulate = Color(0.593133, 0.593134, 0.593133, 1)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_v21l8")
 
@@ -134,7 +135,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_v21l8")
 toggle_mode = true
-text = "Deck One"
+text = "Student"
 metadata/_edit_use_anchors_ = true
 
 [node name="Deck_Two" type="Button" parent="."]
@@ -157,7 +158,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0mw6n")
 toggle_mode = true
-text = "Deck Two"
+text = "Statistics"
 metadata/_edit_use_anchors_ = true
 
 [node name="Deck_Three" type="Button" parent="."]
@@ -181,7 +182,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3onyq")
 toggle_mode = true
-text = "Deck Three"
+text = "Mixed"
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -234,6 +235,9 @@ anchor_right = 0.837922
 anchor_bottom = 0.802208
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
 metadata/_edit_use_anchors_ = true
 
 [node name="Confirn_Selection" type="Button" parent="."]
@@ -277,7 +281,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_vfrca")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dj6qc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_itlho")
 toggle_mode = true
-text = "Deck Four"
+text = "History"
 metadata/_edit_use_anchors_ = true
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("3_v21l8")]
