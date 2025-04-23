@@ -13,7 +13,7 @@ extends Control
 
 var selection = null;
 
-signal exit_about;
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	exit_button.button_down.connect(_on_exit_pressed);
@@ -27,8 +27,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_exit_pressed() -> void:
-	exit_about.emit();
 	set_process(false);
+	get_tree().change_scene_to_file("res://Main Menu/main_menu.tscn")
 	
 func _on_Deck_One_Pressed() -> void:
 	deckInfoText.clear();

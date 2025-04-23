@@ -150,6 +150,7 @@ text = "About"
 layout_mode = 2
 
 [node name="Stevens Day of Giving" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(120, 64)
 layout_mode = 2
 size_flags_horizontal = 4
