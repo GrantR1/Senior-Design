@@ -13,7 +13,7 @@ var drawn_card_this_turn = false
 func _ready() -> void:
 	match DeckVars.your_deck:
 		"deck one": #Student Deck
-			for card_name in CardDatabase.CARDS2.keys():
+			for card_name in CardDatabase.CARDS.keys():
 				original_deck.append(card_name)
 		"deck Two": #Statistics
 			for card_name in CardDatabase.CARDS3.keys():
