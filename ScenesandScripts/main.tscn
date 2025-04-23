@@ -127,16 +127,6 @@ shape = SubResource("RectangleShape2D_c38p5")
 z_index = -2
 texture = ExtResource("5_6nvh7")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
-modulate = Color(0, 0, 0, 1)
-z_index = -2
-offset_left = -9.0
-offset_top = -28.0
-offset_right = 31.0
-offset_bottom = 12.0
-scale = Vector2(3, 3)
-text = "0"
-
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("7_e3vy2")
 
@@ -148,16 +138,6 @@ z_index = -2
 position = Vector2(1770, 180)
 scale = Vector2(0.8, 0.786)
 texture = ExtResource("5_6nvh7")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="OpponentDeck"]
-modulate = Color(0, 0, 0, 1)
-z_index = -2
-offset_left = 1762.8
-offset_top = 157.992
-offset_right = 1802.8
-offset_bottom = 197.992
-scale = Vector2(3, 3)
-text = "0"
 
 [node name="BattleManager" type="Node" parent="."]
 script = ExtResource("10_s7owu")

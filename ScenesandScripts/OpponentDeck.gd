@@ -14,7 +14,7 @@ func _ready() -> void:
 		original_deck.append(card_name)
 	opponent_deck = original_deck.duplicate()
 	opponent_deck.shuffle()
-	$RichTextLabel.text = str(opponent_deck.size())
+	#$RichTextLabel.text = str(opponent_deck.size())
 	card_database_reference = preload("res://ScenesandScripts/CardDatabase.gd")
 	for i in range(STARTING_HAND_SIZE):
 		draw_card()
@@ -30,7 +30,7 @@ func draw_card():
 	if opponent_deck.size() == 0:
 		opponent_deck = original_deck.duplicate()
 		opponent_deck.shuffle()
-	$RichTextLabel.text = str(opponent_deck.size())
+	#$RichTextLabel.text = str(opponent_deck.size())
 	
 	var card_scene = preload(CARD_SCENE_PATH)
 	var new_card = card_scene.instantiate()
