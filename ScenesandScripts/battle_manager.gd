@@ -250,7 +250,9 @@ func try_play_card_attack():
 			pick_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
 			empty_guardian_card_slot.erase(pick_slot)
 			used_guardian_slot.append(pick_slot)
-	
+	else:
+		end_opponent_turn()
+		return
 	var tween = get_tree().create_tween()
 	tween.tween_property(card_to_play, "position", pick_slot.position, CARD_SPEED)
 	var tween2 = get_tree().create_tween()
