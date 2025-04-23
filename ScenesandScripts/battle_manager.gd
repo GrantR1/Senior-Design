@@ -150,17 +150,30 @@ func attack(attacking_card, defending_card, attacker):
 		attacking_card.z_index = 0
 		var card_was_destroyed = false
 		#destroy cards if def = 0
+		var to_destroy = []
 		if attacking_card.def == 0:
-			destroy_card(attacking_card, attacker)
+			to_destroy.append({"card": attacking_card, "owner": attacker})
+			#destroy_card(attacking_card, attacker)
 			card_was_destroyed = true
 		if defending_card.def == 0: #might have to change this
 			if attacker == "Player":
-				destroy_card(defending_card, "Opponent")
+				to_destroy.append({
+				"card": defending_card,
+				"owner": "Opponent"
+				})
+				#destroy_card(defending_card, "Opponent")
 			else:
-				destroy_card(defending_card, "Player")
+				to_destroy.append({
+				"card": defending_card,
+				"owner": "Player"
+				})
+				#destroy_card(defending_card, "Player")
 			card_was_destroyed = true
 		if card_was_destroyed:
-			await wait(1)
+			for pair in to_destroy:
+				print("🗑️ Destroying card:", pair.card.name, "from", pair.owner)
+				destroy_card(pair.card, pair.owner)
+				await wait(0.5)  # Optional: visual pacing
 	if attacker == "Player":
 		player_is_attacking = false
 		$"../EndTurnButton".disabled = false
