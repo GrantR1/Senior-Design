@@ -53,14 +53,18 @@ func opponent_turn ():
 	#wait 1 second
 	if empty_guardian_card_slot.size() != 0 or empty_spell_card_slot.size() != 0:
 		await try_play_card_attack()
+		await wait(.5)
 	#if any opponents cards to attack
 	if opponent_cards_on_battlefield.size() != 0:
 		var dupe = opponent_cards_on_battlefield.duplicate()
 		for card in dupe:
 			if player_cards_on_battlefield.size() != 0:
+				
 				#attack
 				var card_to_attack = player_cards_on_battlefield.pick_random()
+				#print("Opponent chose to attack:", card_to_attack.name, "| Defender type:", card_to_attack.card_type)
 				if card_to_attack.card_type == "Guardian":
+					print("Skipping: attacker is Guardian")
 					await attack(card, card_to_attack, "Opponent")
 				elif player_guardians[card_to_attack.card_slot_card_in].card_in_slot:
 					for player_card in dupe:
@@ -119,6 +123,7 @@ func direct_attack(attacking_card, Attacker):
 	
 func attack(attacking_card, defending_card, attacker):
 	if attacking_card.card_type == "Guardian":
+		print("Guardian is not attacking!")
 		return
 	if attacker == "Player":
 		player_is_attacking = true
@@ -132,7 +137,9 @@ func attack(attacking_card, defending_card, attacker):
 					if card.card_slot_card_in == opponent_guardians[defending_card.card_slot_card_in]:
 						defending_card = card
 						break
+	print("Attacking card type:", attacking_card.card_type)
 	if attacking_card.card_type == "Spell":
+		print("Spell attacking!")
 		attacking_card.z_index = 5
 		var newPosit = Vector2(defending_card.hand_pos.x, defending_card.hand_pos.y + BATTLE_POS_OFFSET)
 		var tween = get_tree().create_tween()
@@ -219,6 +226,7 @@ func try_play_card_attack():
 	
 	var card_to_play = opponent_hand[0]
 	var has_guardian
+	print("Trying to play card: ", card_to_play.name, "Type: ", card_to_play.card_type)
 	if (empty_spell_card_slot.size() == 4 and empty_guardian_card_slot.size() > 2) || empty_spell_card_slot.size() == 0:
 		for card in opponent_hand:
 			if card.def > card_to_play.def and card.card_type == "Guardian":
@@ -228,7 +236,7 @@ func try_play_card_attack():
 		for card in opponent_hand:
 			if card.attack > card_to_play.attack and card.card_type != "Guardian":
 				card_to_play = card
-	
+	print("Card chosen to play: ", card_to_play.name, "Type: ", card_to_play.card_type)
 	var pick_slot
 	if card_to_play.card_type == "Spell":
 		if empty_spell_card_slot.size() != 0:
@@ -242,9 +250,6 @@ func try_play_card_attack():
 			pick_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
 			empty_guardian_card_slot.erase(pick_slot)
 			used_guardian_slot.append(pick_slot)
-	else:
-		end_opponent_turn()
-		return
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(card_to_play, "position", pick_slot.position, CARD_SPEED)
@@ -257,7 +262,7 @@ func try_play_card_attack():
 	card_to_play.card_slot_card_in = pick_slot
 	card_to_play.card_slot_card_in.card_in_slot = true; 
 	opponent_cards_on_battlefield.append(card_to_play)
-	
+	print("🃏 Added to battlefield:", card_to_play.name, "Type:", card_to_play.card_type)
 	await wait(1)
 
 func _on_end_turn_button_pressed() -> void:
