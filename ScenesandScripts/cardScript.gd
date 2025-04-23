@@ -5,6 +5,7 @@ signal hovered_off
 
 var hand_pos
 var card_slot_card_in
+var front_guardian_slot = null
 var card_type
 var def
 var attack
