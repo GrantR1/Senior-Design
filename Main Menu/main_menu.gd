@@ -20,7 +20,7 @@ func handle_connecting_signals() -> void:
 	stevensDayOfGiving_button.pressed.connect(_on_stevensDayOfDiving_website_pressed);
 	about_page.exit_about.connect(_on_exit_about);
 	how_to_play.exit_about.connect(_on_exit_howToPlay);
-	choose_your_deck.exit_about.connect(_on_exit_chooseYourDeck);
+	#choose_your_deck.exit_about.connect(_on_exit_chooseYourDeck);
 
 func _ready() -> void:
 	about_page.visible = false;
