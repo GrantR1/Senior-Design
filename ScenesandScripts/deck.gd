@@ -11,22 +11,23 @@ var drawn_card_this_turn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	match DeckVars.your_deck:
-		"deck one": #Student Deck
-			for card_name in CardDatabase.CARDS.keys():
-				original_deck.append(card_name)
-		"deck Two": #Statistics
-			for card_name in CardDatabase.CARDS3.keys():
-				original_deck.append(card_name)
-		"deck three": #Mixed
-			for card_name in CardDatabase.CARDS4.keys():
-				original_deck.append(card_name)
-		"deck Four": #History
-			for card_name in CardDatabase.CARDS5.keys():
-				original_deck.append(card_name)
+	#uncomment when all cards have been added
+	#match DeckVars.your_deck:
+		#"deck one": #Student Deck
+			#for card_name in CardDatabase.CARDS.keys():
+				#original_deck.append(card_name)
+		#"deck Two": #Statistics
+			#for card_name in CardDatabase.CARDS3.keys():
+				#original_deck.append(card_name)
+		#"deck three": #Mixed
+			#for card_name in CardDatabase.CARDS4.keys():
+				#original_deck.append(card_name)
+		#"deck Four": #History
+			#for card_name in CardDatabase.CARDS5.keys():
+				#original_deck.append(card_name)
 	
-	#for card_name in CardDatabase.CARDS.keys():
-		#original_deck.append(card_name)
+	for card_name in CardDatabase.CARDS.keys():
+		original_deck.append(card_name)
 	
 	player_deck = original_deck.duplicate()
 	player_deck.shuffle()
