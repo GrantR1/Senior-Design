@@ -55,11 +55,13 @@ func opponent_turn ():
 		await try_play_card_attack()
 		await wait(.5)
 	#if any opponents cards to attack
+	print("Opponent attack phase begins. Cards on battlefield:", opponent_cards_on_battlefield.size())
 	if opponent_cards_on_battlefield.size() != 0:
 		var dupe = opponent_cards_on_battlefield.duplicate()
 		for card in dupe:
+			print("Opponent has:", card.name, "Type:", card.card_type)
 			if player_cards_on_battlefield.size() != 0:
-				
+				print("Player has cards, picking one to attack.")
 				#attack
 				var card_to_attack = player_cards_on_battlefield.pick_random()
 				#print("Opponent chose to attack:", card_to_attack.name, "| Defender type:", card_to_attack.card_type)
@@ -67,18 +69,22 @@ func opponent_turn ():
 					print("Skipping: attacker is Guardian")
 					await attack(card, card_to_attack, "Opponent")
 				elif player_guardians[card_to_attack.card_slot_card_in].card_in_slot:
-					for player_card in dupe:
+					for player_card in player_cards_on_battlefield:
 						if player_card.card_slot_card_in == player_guardians[card_to_attack.card_slot_card_in]:
 							await attack(card,player_card,"Opponent")
 				else:
 					await attack(card,card_to_attack,"Opponent")
 			else:
+				print("No player cards — direct attack.")
 				#preform direct attack
 				await direct_attack(card, "Opponent")
 				
 	end_opponent_turn()
 func direct_attack(attacking_card, Attacker):
 	print("Direct Hit")
+	if !attacking_card.is_inside_tree():
+		print("Error: attacking_card is not inside the tree!")
+		return
 	if attacking_card.card_type == "Spell":
 		var new_pos_y
 		if Attacker == "Opponent":
@@ -91,6 +97,7 @@ func direct_attack(attacking_card, Attacker):
 			player_cards_that_attacked_this_turn.append(attacking_card)
 		var new_pos = Vector2(attacking_card.position.x,new_pos_y)
 		attacking_card.z_index = 5
+		
 		var tween = get_tree().create_tween()
 		tween.tween_property(attacking_card, "position", new_pos, CARD_SPEED)
 		await wait(0.15)
@@ -106,22 +113,30 @@ func direct_attack(attacking_card, Attacker):
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
 		attacking_card.z_index = 0
+		await wait(0.5)
 		if opponent_health <= 0 :
-				await wait(1.0)
+				await wait(0.5)
 				get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
 				return
 		#Check if player health is 0
 		if player_health <= 0:
-			await wait(1.0)
+			await wait(0.5)
 			get_tree().change_scene_to_file("res://Lose Screen/lose_scene.tscn");
 			return
-		await wait(1)
+		await wait(.5)
+		
 		if Attacker == "Player":
 			player_is_attacking = false
 			$"../EndTurnButton".disabled = false
 			$"../EndTurnButton".visible = true
 	
 func attack(attacking_card, defending_card, attacker):
+	if attacking_card.ability_script == null:
+		pass
+	else:
+		attacking_card.ability_script.trigger_ability()
+	
+	
 	if attacking_card.card_type == "Guardian":
 		print("Guardian is not attacking!")
 		return
@@ -137,6 +152,11 @@ func attack(attacking_card, defending_card, attacker):
 					if card.card_slot_card_in == opponent_guardians[defending_card.card_slot_card_in]:
 						defending_card = card
 						break
+	if defending_card.ability_script == null:
+		pass
+	else:
+		defending_card.ability_script.defending_ability()
+	
 	print("Attacking card type:", attacking_card.card_type)
 	if attacking_card.card_type == "Spell":
 		print("Spell attacking!")
@@ -220,6 +240,7 @@ func destroy_card(card, card_owner):
 	
 func try_play_card_attack():
 	var opponent_hand = $"../EnemyHand".opponent_hand
+	print("Begining of try_play_card_attack");
 	if opponent_hand.size()==0:
 		end_opponent_turn()
 		return
@@ -243,6 +264,7 @@ func try_play_card_attack():
 			pick_slot = empty_spell_card_slot[randi_range(0, empty_spell_card_slot.size()-1)]	
 			empty_spell_card_slot.erase(pick_slot)
 		else:
+			print("This seems sus this should never trigger spell")
 			end_opponent_turn() 
 			return
 	elif card_to_play.card_type == "Guardian":
@@ -250,6 +272,10 @@ func try_play_card_attack():
 			pick_slot = empty_guardian_card_slot[randi_range(0, empty_guardian_card_slot.size()-1)]
 			empty_guardian_card_slot.erase(pick_slot)
 			used_guardian_slot.append(pick_slot)
+		else:
+			print("This seems sus this should never trigger gard")
+			end_opponent_turn()
+			return
 	else:
 		end_opponent_turn()
 		return

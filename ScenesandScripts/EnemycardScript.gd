@@ -6,3 +6,4 @@ var card_type
 var front_guardian_slot = null
 var attack
 var def
+var ability_script
