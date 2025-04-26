@@ -151,7 +151,7 @@ func raycast ():
 func on_left_click_released():
 	print("Howdy")
 	if card_being_dragged:
-				finish_drag();
+		finish_drag();
 
 
 func get_card_with_highest_z_index(cards):

@@ -15,8 +15,3 @@ func trigger_ability(battle_manager_reference):
 			battle_manager_reference.destroy_card(card,"Opponent")
 
 	print("ability triggered")
-func attacking_ability():
-	pass
-
-func defending_ability():
-	pass

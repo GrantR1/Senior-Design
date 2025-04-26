@@ -131,11 +131,10 @@ func direct_attack(attacking_card, Attacker):
 			$"../EndTurnButton".visible = true
 	
 func attack(attacking_card, defending_card, attacker):
-	if attacking_card.ability_script == null:
+	if attacking_card.ability_script and attacking_card.ability_script.has_method("attacking_ability"):
 		pass
 	else:
-		attacking_card.ability_script.trigger_ability()
-	
+		pass
 	
 	if attacking_card.card_type == "Guardian":
 		print("Guardian is not attacking!")
@@ -152,10 +151,6 @@ func attack(attacking_card, defending_card, attacker):
 					if card.card_slot_card_in == opponent_guardians[defending_card.card_slot_card_in]:
 						defending_card = card
 						break
-	if defending_card.ability_script == null:
-		pass
-	else:
-		defending_card.ability_script.defending_ability()
 	
 	print("Attacking card type:", attacking_card.card_type)
 	if attacking_card.card_type == "Spell":
@@ -168,8 +163,11 @@ func attack(attacking_card, defending_card, attacker):
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
 		#card damage
-		defending_card.def = max(0,defending_card.def - attacking_card.attack)
-		defending_card.get_node("Def").text = str(defending_card.def)
+		if defending_card.ability_script and defending_card.ability_script.has_method("defending_ability"):
+			defending_card.ability_script.defending_ability(self, attacking_card, defending_card)
+		else:
+			defending_card.def = max(0,defending_card.def - attacking_card.attack)
+			defending_card.get_node("Def").text = str(defending_card.def)
 		
 		attacking_card.def = max(0,attacking_card.def - defending_card.attack)
 		attacking_card.get_node("Def").text = str(attacking_card.def)
