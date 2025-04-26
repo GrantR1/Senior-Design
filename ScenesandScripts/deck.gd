@@ -12,27 +12,33 @@ var drawn_card_this_turn = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#uncomment when all cards have been added
-	#match DeckVars.your_deck:
-		#"deck one": #Student Deck
-			#for card_name in CardDatabase.CARDS.keys():
-				#original_deck.append(card_name)
-		#"deck Two": #Statistics
-			#for card_name in CardDatabase.CARDS3.keys():
-				#original_deck.append(card_name)
-		#"deck three": #Mixed
-			#for card_name in CardDatabase.CARDS4.keys():
-				#original_deck.append(card_name)
-		#"deck Four": #History
-			#for card_name in CardDatabase.CARDS5.keys():
-				#original_deck.append(card_name)
+	var deck_selected = "deck one"
+	if "your_deck" in DeckVars and DeckVars.your_deck != "":
+		deck_selected = DeckVars.your_deck
 	
-	for card_name in CardDatabase.CARDS.keys():
+	print("Using deck:", deck_selected)
+
+	match deck_selected:
+		"deck one":
+			card_database_reference = CardDatabase.CARDS2
+		"deck Two":
+			card_database_reference = CardDatabase.CARDS3
+		"deck three":
+			card_database_reference = CardDatabase.CARDS4
+		"deck Four":
+			card_database_reference = CardDatabase.CARDS5
+		_:
+			print("Unknown deck selected: " + str(deck_selected))
+			card_database_reference = CardDatabase.CARDS  # fallback to student deck
+
+	# Fill the deck from the selected reference
+	for card_name in card_database_reference.keys():
 		original_deck.append(card_name)
 	
 	player_deck = original_deck.duplicate()
 	player_deck.shuffle()
 	#$RichTextLabel.text = str(player_deck.size())
-	card_database_reference = preload("res://ScenesandScripts/CardDatabase.gd")
+	#card_database_reference = preload("res://ScenesandScripts/CardDatabase.gd")
 	for i in range(STARTING_HAND_SIZE):
 		draw_card()
 		drawn_card_this_turn = false
@@ -56,13 +62,13 @@ func draw_card():
 	var new_card = card_scene.instantiate()
 	var card_image_path = str("res://Sprites/" + card_drawn_name + ".png")
 	new_card.get_node("BackCard").texture = load(card_image_path)
-	new_card.card_type = str(card_database_reference.CARDS[card_drawn_name][3])
-	new_card.def = card_database_reference.CARDS[card_drawn_name][1]
-	new_card.attack = card_database_reference.CARDS[card_drawn_name][0]
+	new_card.card_type = str(card_database_reference[card_drawn_name][3])
+	new_card.def = card_database_reference[card_drawn_name][1]
+	new_card.attack = card_database_reference[card_drawn_name][0]
 	new_card.get_node("Attack").text = str(new_card.attack)
 	new_card.get_node("Def").text = str(new_card.def)
 	#new_card.get_node("Cost").text = str(card_database_reference.CARDS[card_drawn_name][2])
-	var new_card_ability_script_path = card_database_reference.CARDS[card_drawn_name][5]
+	var new_card_ability_script_path = card_database_reference[card_drawn_name][5]
 	if new_card_ability_script_path:
 		new_card.ability_script = load(new_card_ability_script_path).new()
 	
