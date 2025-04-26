@@ -192,8 +192,9 @@ anchor_left = 0.358
 anchor_right = 0.642
 anchor_bottom = 0.054
 offset_left = 0.849976
+offset_top = 24.0
 offset_right = -0.850098
-offset_bottom = 17.302
+offset_bottom = 41.302
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
