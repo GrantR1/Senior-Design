@@ -131,6 +131,12 @@ func direct_attack(attacking_card, Attacker):
 			$"../EndTurnButton".visible = true
 	
 func attack(attacking_card, defending_card, attacker):
+	if attacking_card.ability_script == null:
+		pass
+	else:
+		attacking_card.ability_script.trigger_ability()
+	
+	
 	if attacking_card.card_type == "Guardian":
 		print("Guardian is not attacking!")
 		return
@@ -146,6 +152,11 @@ func attack(attacking_card, defending_card, attacker):
 					if card.card_slot_card_in == opponent_guardians[defending_card.card_slot_card_in]:
 						defending_card = card
 						break
+	if defending_card.ability_script == null:
+		pass
+	else:
+		defending_card.ability_script.attacking_ability()
+	
 	print("Attacking card type:", attacking_card.card_type)
 	if attacking_card.card_type == "Spell":
 		print("Spell attacking!")
