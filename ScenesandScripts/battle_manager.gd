@@ -155,7 +155,7 @@ func attack(attacking_card, defending_card, attacker):
 	if defending_card.ability_script == null:
 		pass
 	else:
-		defending_card.ability_script.attacking_ability()
+		defending_card.ability_script.defending_ability()
 	
 	print("Attacking card type:", attacking_card.card_type)
 	if attacking_card.card_type == "Spell":

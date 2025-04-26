@@ -17,3 +17,6 @@ func trigger_ability(battle_manager_reference):
 	print("ability triggered")
 func attacking_ability():
 	pass
+
+func defending_ability():
+	pass
