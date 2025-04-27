@@ -1,6 +1,6 @@
 extends Node
 
-func trigger_ability(battle_manager_reference):
+func trigger_ability(battle_manager_reference, user):
 	
 	var cards_to_destroy = []
 	

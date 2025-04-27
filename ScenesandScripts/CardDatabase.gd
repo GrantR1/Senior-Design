@@ -5,8 +5,8 @@ const CARDS = { #attack #defense #cost, card type, abiliy text, ability script
 	"Moody Student" : [2,2,2, "Spell", null, null],
 	"SS Stevens victory": [0, 5,3, "Guardian", null, "res://Abilities/SS_Stevens.gd"],
 	"Henry Morton": [2,2,2, "Spell", null, null],
-	"University Center Complex": [0, 2, 1, "Guardian", null, null],
-	"Sleep Deprived": [1,1,2, "Spell", null, "res://Abilities/Sleep_Deprived.gd"]
+	"University Center Complex": [0, 2, 1, "Guardian", null, "res://Abilities/SC_Library.gd"],
+	"Sleep Deprived": [10,1,2, "Spell", null, "res://Abilities/Sleep_Deprived.gd"]
 }
 
 const CARDS2 = { #Student Deck
@@ -48,7 +48,7 @@ const CARDS4 = { #Mixed Deck
 	"TI-Nspire Graphing Calculator": [0, 0, 2, "Spell", null, null],
 	"Failed Test": [0, 0, 3, "Spell", null, null],
 	"A+ Test": [0, 1, 1, "Spell", null, null],
-	"Sleep Deprived": [0, 0, 2, "Spell", null, null],
+	"Sleep Deprived": [1,1,2, "Spell", null, "res://Abilities/Sleep_Deprived.gd"],
 	"Tough Classes": [0, 0, 2, "Spell", null, null],
 	"Honor Code Violation": [0, 0, 4, "Spell", null, null]
 }

@@ -132,7 +132,7 @@ func direct_attack(attacking_card, Attacker):
 	
 func attack(attacking_card, defending_card, attacker):
 	if attacking_card.ability_script and attacking_card.ability_script.has_method("attacking_ability"):
-		pass
+		attacking_card.ability_script.attacking_ability(self, attacking_card, defending_card)
 	else:
 		pass
 	
@@ -284,10 +284,15 @@ func try_play_card_attack():
 	
 	card_to_play.get_node("AnimationPlayer").play("card_flip")
 	$"../EnemyHand".remove_card(card_to_play)
+
 	
 	card_to_play.card_slot_card_in = pick_slot
 	card_to_play.card_slot_card_in.card_in_slot = true; 
 	opponent_cards_on_battlefield.append(card_to_play)
+	print(card_to_play.ability_script)
+	if card_to_play.ability_script and card_to_play.ability_script.has_method("trigger_ability"):
+		card_to_play.ability_script.trigger_ability(self, "opponent")
+		print("can anybody hear me")
 	print("🃏 Added to battlefield:", card_to_play.name, "Type:", card_to_play.card_type)
 	await wait(1)
 
