@@ -190,4 +190,22 @@ position = Vector2(984, 352)
 scale = Vector2(4, 4)
 texture = ExtResource("14_emsc3")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 33.0
+offset_top = 250.0
+offset_right = 233.0
+offset_bottom = 290.0
+scale = Vector2(1.5, 1.5)
+text = "Opponent Health"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 51.0
+offset_top = 510.0
+offset_right = 251.0
+offset_bottom = 550.0
+scale = Vector2(1.5, 1.5)
+text = "Player Health"
+
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
