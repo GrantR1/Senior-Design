@@ -58,7 +58,7 @@ const CARDS5 = { #History Deck
 	"Henry Morton": [6, 1, 5, "Spell", null, null],
 	"The Center for Maritime Systems at Stevens": [0, 5, 6, "Guardian", null, null],
 	"Stevens' S.C. Williams Library": [0, 2, 4, "Guardian", null, null],
-	"Walker Gymnasium": [0, 3, 4, "Gurdian", null, null], 
+	"Walker Gymnasium": [0, 3, 4, "Guardian", null, null], 
 	"Charles V. Schaefer Jr. School of Engineering and Science": [0, 0, 2, "Spell", null, null],
 	"Office of Innovation and Entrepreneruship": [0, 0, 1, "Spell", null, null],
 	"The Center for Innovation in Engineering and Science Education": [2, 0, 2, "Spell", null, null],
