@@ -16,6 +16,7 @@ var player_guardians = {}
 var opponent_guardians = {}
 const SMALL_CARD_SCALE = 0.5
 const CARD_SPEED = 0.2
+var turn_count = 0
 func _ready () -> void:
 	battle_timer = $"../BattleTimer"
 	battle_timer.one_shot = true
@@ -116,6 +117,7 @@ func direct_attack(attacking_card, Attacker):
 		await wait(0.5)
 		if opponent_health <= 0 :
 				await wait(0.5)
+				Global.final_turn_count = turn_count
 				get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
 				return
 		#Check if player health is 0
@@ -297,6 +299,7 @@ func try_play_card_attack():
 	await wait(1)
 
 func _on_end_turn_button_pressed() -> void:
+	turn_count = turn_count + 1
 	is_opponent_turn = true
 	$"../Card Manager".unselect_selected_guardian()
 	player_cards_that_attacked_this_turn = []

@@ -29,7 +29,7 @@ func _ready() -> void:
 			card_database_reference = CardDatabase.CARDS5
 		_:
 			print("Unknown deck selected: " + str(deck_selected))
-			card_database_reference = CardDatabase.CARDS2  # fallback to student deck
+			card_database_reference = CardDatabase.CARDS  # fallback to student deck
 
 	# Fill the deck from the selected reference
 	for card_name in card_database_reference.keys():

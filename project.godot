@@ -19,6 +19,8 @@ config/icon="uid://cmnebc45txdop"
 
 DeckVars="*res://deck_vars.gd"
 CardDatabase="*res://ScenesandScripts/CardDatabase.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Global="*res://global.gd"
 
 [display]
 
@@ -30,6 +32,10 @@ window/vsync/vsync_mode=0
 [dotnet]
 
 project/assembly_name="Testing"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [rendering]
 
