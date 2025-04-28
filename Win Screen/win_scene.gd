@@ -7,13 +7,14 @@ var score
 @onready var show_score = $Score as Label
 
 func _ready():
-	score = Global.final_turn_count
+	score = global.final_turn_count
 	show_score.text = "Score: " + str(score)
 
 func _on_submit_pressed() -> void:
 	if($VBoxContainer2/LineEdit.text!= ""):
 		player_name = $VBoxContainer2/LineEdit.text
-		SilentWolf.Scores.save_score(player_name, score)
+		#SilentWolf.Scores.save_score(player_name, score)
+		await Leaderboards.post_guest_score("stevens-day-of-givin-leaderboard-Vyng", score, player_name)
 		submit_button.visible = false
 		name_confirmation.text = "Name saved successfully!"
 		name_confirmation.visible = true

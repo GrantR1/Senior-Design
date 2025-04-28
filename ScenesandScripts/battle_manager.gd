@@ -117,7 +117,7 @@ func direct_attack(attacking_card, Attacker):
 		await wait(0.5)
 		if opponent_health <= 0 :
 				await wait(0.5)
-				Global.final_turn_count = turn_count
+				global.final_turn_count = turn_count
 				get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
 				return
 		#Check if player health is 0

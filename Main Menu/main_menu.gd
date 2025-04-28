@@ -82,4 +82,4 @@ func _on_exit_howToPlay() -> void:
 
 
 func _on_leaderboard_pressed() -> void:
-	get_tree().change_scene_to_file("res://addons/silent_wolf/Scores/Leaderboard.tscn");
+	get_tree().change_scene_to_file("res://addons/quiver_leaderboards/leaderboard_ui.tscn");
