@@ -32,6 +32,7 @@ func connect_card_signals(card):
 	card.connect("hovered_off", on_hovered_off_card)
 
 func on_hovered_over_card(card):
+	$"../info/Label".text = card.card_description
 	if card.card_slot_card_in:
 		return
 	if !is_hovering_on_card:
@@ -40,12 +41,15 @@ func on_hovered_over_card(card):
 
 func on_hovered_off_card(card):
 	if !card.defeated:
+		
 		if !card.card_slot_card_in && !card_being_dragged:
 			highlight_card(card,false)
 			var new_card_hovered = raycast()
 			if new_card_hovered:
+				$"../info/Label".text = card.card_description
 				highlight_card(new_card_hovered, true)
 			else:
+				$"../info/Label".text = ""
 				is_hovering_on_card = false
 func card_clicked(card):
 	if card.card_slot_card_in:
