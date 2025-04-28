@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Testing"
-run/main_scene="res://ScenesandScripts/main.tscn"
+run/main_scene="uid://dmscy60h5xfkk"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://Sprites/icon.svg"
+config/icon="uid://cmnebc45txdop"
 
 [autoload]
 
