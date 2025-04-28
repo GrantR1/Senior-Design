@@ -1,0 +1,158 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgygkbtm0burn"]
+
+[ext_resource type="Script" uid="uid://wul3pny8shii" path="res://addons/quiver_leaderboards/leaderboard_ui.gd" id="1_3mlof"]
+[ext_resource type="Texture2D" uid="uid://c8uq2bokjgnkd" path="res://addons/quiver_leaderboards/manhattan.png" id="2_pp1k2"]
+[ext_resource type="FontFile" uid="uid://b42876jcmvtug" path="res://addons/quiver_leaderboards/TT Octosquares Trial Regular.ttf" id="3_j14vu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j14vu"]
+texture = ExtResource("2_pp1k2")
+modulate_color = Color(0.67069, 0.67069, 0.67069, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j14vu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0ljn"]
+bg_color = Color(0.635294, 0.635294, 0.635294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnino"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e64v3"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[node name="LeaderboardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_3mlof")
+leaderboard_id = "stevens-day-of-givin-leaderboard-Vyng"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j14vu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 1920.0
+offset_bottom = 1110.0
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("3_j14vu")
+theme_override_font_sizes/font_size = 60
+text = "Leaderboard"
+horizontal_alignment = 1
+
+[node name="ScoresLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "Scores"
+horizontal_alignment = 1
+
+[node name="Nav" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="VBoxContainer/Nav"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = " < "
+
+[node name="NextButton" type="Button" parent="VBoxContainer/Nav"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = " > "
+
+[node name="ScoreList" type="Tree" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -920.0
+offset_top = -427.0
+offset_right = 924.0
+offset_bottom = 515.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/title_button_font_size = 30
+columns = 3
+column_titles_visible = true
+allow_search = false
+hide_folding = true
+hide_root = true
+select_mode = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = 402.5
+offset_right = 153.0
+offset_bottom = 511.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Exit" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j14vu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_g0ljn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnino")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e64v3")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Nav/PrevButton" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Nav/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Exit" to="." method="_on_exit_pressed"]

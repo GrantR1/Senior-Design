@@ -62,14 +62,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -678.0
-offset_top = 41.0
-offset_right = 678.0
-offset_bottom = 209.0
+offset_left = -576.5
+offset_top = 27.0
+offset_right = 576.5
+offset_bottom = 167.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7m3e7")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 100
 text = "CONGRATULATIONS!"
 
 [node name="Label2" type="Label" parent="."]
@@ -77,15 +77,83 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -337.5
-offset_top = 200.0
-offset_right = 337.5
-offset_bottom = 368.0
+offset_left = -285.5
+offset_top = 154.0
+offset_right = 285.5
+offset_bottom = 294.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_7m3e7")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 100
 text = "YOU WON!"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -224.5
+offset_right = 118.0
+offset_bottom = -169.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.982343, 0.982342, 0.982342, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="Name_Confirmation" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -41.5
+offset_right = 109.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -135.5
+offset_right = 166.5
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Enter Name"
+
+[node name="Submit" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e81tt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_2tlrm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ivr65")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ivpjx")
+text = "Submit
+"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -94,15 +162,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -274.5
-offset_top = -37.0
-offset_right = 274.5
-offset_bottom = 307.0
+offset_left = -236.0
+offset_top = 207.0
+offset_right = 236.0
+offset_bottom = 503.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Play Again" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -131,5 +199,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_2tlrm")
 text = "Donate"
 underline = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="VBoxContainer/Donate" to="." method="_on_donate_pressed"]

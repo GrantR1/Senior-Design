@@ -10,6 +10,7 @@ extends Control
 @onready var how_to_play = $"How To Play" as HowToPlay;
 @onready var choose_your_deck = $"Choose A Deck" as ChooseYourDeck;
 @onready var margin_container = $MarginContainer as MarginContainer;
+@onready var leaderboard = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Leaderboard as Button;
 
 # Called when the node enters the scene tree for the first time.
 func handle_connecting_signals() -> void:
@@ -21,7 +22,8 @@ func handle_connecting_signals() -> void:
 	about_page.exit_about.connect(_on_exit_about);
 	how_to_play.exit_about.connect(_on_exit_howToPlay);
 	#choose_your_deck.exit_about.connect(_on_exit_chooseYourDeck);
-
+	leaderboard.pressed.connect(_on_leaderboard_pressed);
+	
 func _ready() -> void:
 	about_page.visible = false;
 	handle_connecting_signals();
@@ -77,3 +79,7 @@ func _on_exit_howToPlay() -> void:
 	margin_container.visible = true;
 	how_to_play.visible = false;
 	
+
+
+func _on_leaderboard_pressed() -> void:
+	get_tree().change_scene_to_file("res://addons/quiver_leaderboards/leaderboard_ui.tscn");

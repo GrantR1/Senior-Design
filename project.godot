@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Testing"
+config/name="Stevens Day of Giving Game"
 run/main_scene="uid://dmscy60h5xfkk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://cmnebc45txdop"
@@ -19,6 +19,9 @@ config/icon="uid://cmnebc45txdop"
 
 DeckVars="*res://deck_vars.gd"
 CardDatabase="*res://ScenesandScripts/CardDatabase.gd"
+global="*res://global.gd"
+Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
+PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
 
 [display]
 
@@ -30,6 +33,14 @@ window/vsync/vsync_mode=0
 [dotnet]
 
 project/assembly_name="Testing"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
+
+[quiver]
+
+general/auth_token="cRk6CADub9NplvqEiTajKeat8zDZ0wMILM2CXCKl"
 
 [rendering]
 
