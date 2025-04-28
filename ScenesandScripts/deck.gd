@@ -67,6 +67,7 @@ func draw_card():
 	new_card.attack = card_database_reference[card_drawn_name][0]
 	new_card.get_node("Attack").text = str(new_card.attack)
 	new_card.get_node("Def").text = str(new_card.def)
+	new_card.card_description = card_database_reference[card_drawn_name][4]
 	#new_card.get_node("Cost").text = str(card_database_reference.CARDS[card_drawn_name][2])
 	var new_card_ability_script_path = card_database_reference[card_drawn_name][5]
 	if new_card_ability_script_path:
