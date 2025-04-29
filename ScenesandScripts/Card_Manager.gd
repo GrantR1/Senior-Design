@@ -46,7 +46,7 @@ func on_hovered_off_card(card):
 			highlight_card(card,false)
 			var new_card_hovered = raycast()
 			if new_card_hovered:
-				$"../info/Label".text = card.card_description
+				$"../info/Label".text = new_card_hovered.card_description
 				highlight_card(new_card_hovered, true)
 			else:
 				$"../info/Label".text = ""
