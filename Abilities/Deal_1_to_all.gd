@@ -23,3 +23,4 @@ func trigger_ability(battle_manager_reference, user):
 		for card in cards_to_destroy_player:
 			battle_manager_reference.destroy_card(card,"Player")
 	print("ability triggered")
+	pass

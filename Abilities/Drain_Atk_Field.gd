@@ -14,3 +14,4 @@ func trigger_ability(battle_manager_reference, user):
 			if card.attack < 0:
 				card.attack = 0
 	print("Your d*ick is now a noodle")
+	pass
