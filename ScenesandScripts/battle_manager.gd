@@ -113,18 +113,18 @@ func direct_attack(attacking_card, Attacker):
 			
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
-		attacking_card.z_index = 0
+		attacking_card.z_index = 1
 		await wait(0.5)
-		if opponent_health <= 0 :
-				await wait(0.5)
-				global.final_turn_count = turn_count
-				get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
-				return
-		#Check if player health is 0
 		if player_health <= 0:
-			await wait(0.5)
+			await wait(0.5);
 			get_tree().change_scene_to_file("res://Lose Screen/lose_scene.tscn");
 			return
+		if opponent_health <= 0 :
+			await wait(0.5)
+			global.final_turn_count = turn_count
+			get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
+			return
+		#Check if player health is 0
 		await wait(.5)
 		
 		if Attacker == "Player":

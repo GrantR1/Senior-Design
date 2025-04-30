@@ -8,7 +8,9 @@ var score
 
 func _ready():
 	score = global.final_turn_count
-	show_score.text = "Score: " + str(score)
+	if score != null and score != 0:
+		print(score);
+		show_score.text = "Score: " + str(score)
 
 func _on_submit_pressed() -> void:
 	if($VBoxContainer2/LineEdit.text!= ""):
