@@ -6,7 +6,7 @@ const CARDS = { #attack #defense #cost, card type, abiliy text, ability script
 	"SS Stevens victory": [0, 5,3, "Guardian", "4", "res://Abilities/Minus_1_on_def.gd"],
 	"Henry Morton": [2,2,2, "Spell", "5", null],
 	"University Center Complex": [0, 2, 1, "Guardian", "6", "res://Abilities/Plus_2_on_play.gd"],
-	"Sleep Deprived": [1,1,2, "Spell", "Deals 1 damage to all opponent's cards. You've all been to college, you know what this is", "res://Abilities/Deal_1_to_all.gd"]
+	"Sleep Deprived": [1,2,2, "Spell", "Deals 1 damage to all cards. You've all been to college, you know what this is", "res://Abilities/Deal_1_to_all.gd"]
 }
 
 const CARDS2 = { #Student Deck
