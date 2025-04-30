@@ -41,7 +41,6 @@ func on_hovered_over_card(card):
 
 func on_hovered_off_card(card):
 	if !card.defeated:
-		
 		if !card.card_slot_card_in && !card_being_dragged:
 			highlight_card(card,false)
 			var new_card_hovered = raycast()
@@ -80,6 +79,8 @@ func select_card_for_battle(card):
 		card.position.y -= 20
 	
 func highlight_card(card, hovered):
+	if card.card_slot_card_in:
+		return
 	if hovered:
 		card.scale = Vector2(CARD_BIGGER_SCALE, CARD_BIGGER_SCALE)
 		card.z_index = 2
@@ -92,12 +93,14 @@ func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
 func finish_drag():
-	card_being_dragged.scale = Vector2(CARD_BIGGER_SCALE, CARD_BIGGER_SCALE)
+	if not card_being_dragged:
+		return
+	is_hovering_on_card = false
+	card_being_dragged.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
+	#card_being_dragged.z_index = 1
 	var card_slot_found = raycast_slot();
 	if card_slot_found and not card_slot_found.card_in_slot:
 		if card_being_dragged.card_type == card_slot_found.card_slot_type:
-			#print(card_slot_found.get_class())
-			#if the card type can go in the slot ^
 			if !played_guardian_card_this_turn:
 				#card scalling down
 				played_guardian_card_this_turn = true
