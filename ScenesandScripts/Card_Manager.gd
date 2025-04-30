@@ -119,8 +119,23 @@ func finish_drag():
 					card_being_dragged.ability_script.trigger_ability($"../BattleManager", "player")
 					print("Card Manager", $"../BattleManager".player_health)
 					$"../PlayerHealth".text = str($"../BattleManager".player_health)
-				else:
-					pass
+					$"../OpponentHealth".text = str($"../BattleManager".opponent_health)
+					if $"../BattleManager".opponent_health <= 0 :
+						print("I am death, destroyer of worlds")
+						await $"../BattleManager".wait(0.5)
+						global.final_turn_count = $"../BattleManager".turn_count
+						get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
+						return
+			#Check if player health is 0
+					if $"../BattleManager".player_health <= 0:
+						await $"../BattleManager".wait(0.5)
+						get_tree().change_scene_to_file("res://Lose Screen/lose_scene.tscn");
+						return
+						await $"../BattleManager".wait(.5)
+					else:
+						pass
+				if card_being_dragged.ability_script and card_being_dragged.ability_script.has_method("reset_ability"):
+					card_being_dragged.ability_script.reset_ability($"../Card Manager", "player")
 				card_being_dragged = null;
 				return
 	player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)

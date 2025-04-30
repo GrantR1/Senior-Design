@@ -1,7 +1,7 @@
 extends Node
 const CARDS = { #attack #defense #cost, card type, abiliy text, ability script
 	"Teachers Assistant" : [2,1,1, "Spell", "Lets go gambling! (Aw dangit)", "res://Abilities/Jacobs_Gambling_Addiction.gd"], 
-	"The Professor" : [2,3,3, "Spell", "2", null], 
+	"The Professor" : [2,3,3, "Spell", "How about alittle more", "res://Abilities/Guardian_Play_One_More.gd"], 
 	"Moody Student" : [2,2,2, "Spell", "Yummer", "res://Abilities/Heal_On_atk.gd"],
 	"SS Stevens victory": [0, 5,3, "Guardian", "4", "res://Abilities/Minus_1_on_def.gd"],
 	"Henry Morton": [2,2,2, "Spell", "Fireball", "res://Abilities/Fireball.gd"],
@@ -47,7 +47,7 @@ const CARDS4 = { #Mixed Deck
 	"TI-Nspire Graphing Calculator": [0, 0, 2, "Spell", "6", null],
 	"Failed Test": [0, 0, 3, "Spell", "7", null],
 	"A+ Test": [0, 1, 1, "Spell", "8", null],
-	"Sleep Deprived": [1,1,2, "Spell", "9", "res://Abilities/Deal_1_to_all.gd"],
+	"Sleep Deprived": [1,1,2, "Spell", "9", null],
 	"Tough Classes": [0, 0, 2, "Spell", "10", null],
 	"Honor Code Violation": [0, 0, 4, "Spell", "11", null]
 }

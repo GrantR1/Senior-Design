@@ -178,11 +178,11 @@ func attack(attacking_card, defending_card, attacker):
 		var card_was_destroyed = false
 		#destroy cards if def = 0
 		var to_destroy = []
-		if attacking_card.def == 0:
+		if attacking_card.def <= 0:
 			to_destroy.append({"card": attacking_card, "owner": attacker})
 			#destroy_card(attacking_card, attacker)
 			card_was_destroyed = true
-		if defending_card.def == 0: #might have to change this
+		if defending_card.def <= 0: #might have to change this
 			if attacker == "Player":
 				to_destroy.append({
 				"card": defending_card,
@@ -295,7 +295,21 @@ func try_play_card_attack():
 	if card_to_play.ability_script and card_to_play.ability_script.has_method("trigger_ability"):
 		card_to_play.ability_script.trigger_ability(self, "opponent")
 		print("Battle Manager:", player_health)
+		print("Battle Manager:", opponent_health)
 		$"../PlayerHealth".text = str(player_health)
+		$"../OpponentHealth".text = str(opponent_health)
+		if opponent_health <= 0 :
+				print("I am death, destroyer of worlds")
+				await wait(0.5)
+				global.final_turn_count = turn_count
+				get_tree().change_scene_to_file("res://Win Screen/win_scene.tscn")
+				return
+		#Check if player health is 0
+		if player_health <= 0:
+			await wait(0.5)
+			get_tree().change_scene_to_file("res://Lose Screen/lose_scene.tscn");
+			return
+		await wait(.5)
 		print("can anybody hear me")
 		
 	print("🃏 Added to battlefield:", card_to_play.name, "Type:", card_to_play.card_type)
