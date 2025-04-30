@@ -47,7 +47,7 @@ const CARDS4 = { #Mixed Deck
 	"TI-Nspire Graphing Calculator": [0, 0, 2, "Spell", "6", null],
 	"Failed Test": [0, 0, 3, "Spell", "7", null],
 	"A+ Test": [0, 1, 1, "Spell", "8", null],
-	"Sleep Deprived": [1,1,2, "Spell", "9", null],
+	"Sleep Deprived": [1,1,2, "Spell", "9", "res://Abilities/Deal_1_to_all.gd"],
 	"Tough Classes": [0, 0, 2, "Spell", "10", null],
 	"Honor Code Violation": [0, 0, 4, "Spell", "11", null]
 }
