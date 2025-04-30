@@ -6,6 +6,7 @@ var original_deck = []
 const STARTING_HAND_SIZE = 5
 var card_database_reference
 const CARD_DRAW_SPEED = .5
+const MAX_HAND_SIZE = 7
 const DECKS = {
 	1: CardDatabase.CARDS,   # Assuming CARDS is the first deck (e.g., the "student deck")
 	2: CardDatabase.CARDS2,  # Second deck
@@ -32,7 +33,8 @@ func _ready() -> void:
 
 func draw_card():
 	print("Pizza")
-	
+	if $"../EnemyHand".opponent_hand.size() >= MAX_HAND_SIZE:
+		return
 	var card_drawn_name = opponent_deck[0]
 	opponent_deck.erase(card_drawn_name)
 	

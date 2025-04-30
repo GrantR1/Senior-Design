@@ -4,6 +4,7 @@ const CARD_WIDTH = 140
 const HAND_Y_POS = 0
 var opponent_hand = []
 var center_screen_x
+const MAX_HAND_SIZE = 7
 const DEFAULT_CARD_SPEED = 0.1
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +12,10 @@ func _ready() -> void:
 	center_screen_x = get_viewport().size.x / 2
 
 func add_card_to_hand(card, speed):
+	if opponent_hand.size() >= MAX_HAND_SIZE:
+		print("Cannot add card. Hand is full!")
+		animate_card(card, card.hand_pos, DEFAULT_CARD_SPEED)
+		return
 	if card not in opponent_hand:
 		opponent_hand.insert(0, card)
 		update_hand_positions(speed)
