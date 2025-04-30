@@ -174,7 +174,7 @@ func attack(attacking_card, defending_card, attacker):
 		attacking_card.def = max(0,attacking_card.def - defending_card.attack)
 		attacking_card.get_node("Def").text = str(attacking_card.def)
 		await wait(1)
-		#attacking_card.z_index = 0
+		attacking_card.z_index = 1
 		var card_was_destroyed = false
 		#destroy cards if def = 0
 		var to_destroy = []
