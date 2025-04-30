@@ -6,6 +6,7 @@ var original_deck = []
 const STARTING_HAND_SIZE = 5
 var card_database_reference
 const CARD_DRAW_SPEED = .5
+const MAX_HAND_SIZE = 7
 var drawn_card_this_turn = false
 
 #Go down to match statement to change the fallback to deck being tested
@@ -49,6 +50,8 @@ func draw_card():
 	print("Pizza")
 	if drawn_card_this_turn:
 		return
+	if $"../PlayerHand".player_hand.size() >= MAX_HAND_SIZE:
+		return
 	drawn_card_this_turn = true;
 	var card_drawn_name = player_deck[0]
 	player_deck.erase(card_drawn_name)
@@ -72,6 +75,7 @@ func draw_card():
 	var new_card_ability_script_path = card_database_reference[card_drawn_name][5]
 	if new_card_ability_script_path:
 		new_card.ability_script = load(new_card_ability_script_path).new()
+	
 	
 	$"../Card Manager".add_child(new_card)
 	new_card.name = "Card"
