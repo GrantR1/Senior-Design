@@ -4,6 +4,11 @@ func trigger_ability(battle_manager_reference, user):
 	
 	var cards_to_destroy = []
 	
+	for card in battle_manager_reference.player_cards_on_battlefield:
+		card.def = max(0, card.def - 1)
+		card.get_node("Def").text = str(card.def)
+		if card.def == 0:
+			cards_to_destroy.append(card)
 	for card in battle_manager_reference.opponent_cards_on_battlefield:
 		card.def = max(0, card.def - 1)
 		card.get_node("Def").text = str(card.def)

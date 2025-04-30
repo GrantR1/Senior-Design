@@ -8,7 +8,7 @@ var card_database_reference
 const CARD_DRAW_SPEED = .5
 var drawn_card_this_turn = false
 
-
+#Go down to match statement to change the fallback to deck being tested
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#uncomment when all cards have been added
@@ -29,7 +29,7 @@ func _ready() -> void:
 			card_database_reference = CardDatabase.CARDS5
 		_:
 			print("Unknown deck selected: " + str(deck_selected))
-			card_database_reference = CardDatabase.CARDS  # fallback to student deck
+			card_database_reference = CardDatabase.CARDS  # fallback to debug deck
 
 	# Fill the deck from the selected reference
 	for card_name in card_database_reference.keys():

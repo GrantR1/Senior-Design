@@ -1,12 +1,12 @@
 extends Node
 const CARDS = { #attack #defense #cost, card type, abiliy text, ability script
-	"Teachers Assistant" : [2,1,1, "Spell", "1", null], 
+	"Teachers Assistant" : [2,1,1, "Spell", "Lets go gambling! (Aw dangit)", "res://Abilities/Jacobs_Gambling_Addiction.gd"], 
 	"The Professor" : [2,3,3, "Spell", "2", null], 
-	"Moody Student" : [2,2,2, "Spell", "3", null],
-	"SS Stevens victory": [0, 5,3, "Guardian", "4", "res://Abilities/SS_Stevens.gd"],
+	"Moody Student" : [2,2,2, "Spell", "Yummer", "res://Abilities/Heal_On_atk.gd"],
+	"SS Stevens victory": [0, 5,3, "Guardian", "4", "res://Abilities/Minus_1_on_def.gd"],
 	"Henry Morton": [2,2,2, "Spell", "5", null],
-	"University Center Complex": [0, 2, 1, "Guardian", "6", "res://Abilities/SC_Library.gd"],
-	"Sleep Deprived": [10,1,2, "Spell", "7", "res://Abilities/Sleep_Deprived.gd"]
+	"University Center Complex": [0, 2, 1, "Guardian", "6", "res://Abilities/Plus_2_on_play.gd"],
+	"Sleep Deprived": [1,1,2, "Spell", "Deals 1 damage to all opponent's cards. You've all been to college, you know what this is", "res://Abilities/Deal_1_to_all.gd"]
 }
 
 const CARDS2 = { #Student Deck
