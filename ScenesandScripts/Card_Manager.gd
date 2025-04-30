@@ -117,6 +117,8 @@ func finish_drag():
 				$"../BattleManager".player_cards_on_battlefield.append(card_being_dragged)
 				if card_being_dragged.ability_script and card_being_dragged.ability_script.has_method("trigger_ability"):
 					card_being_dragged.ability_script.trigger_ability($"../BattleManager", "player")
+					print("Card Manager", $"../BattleManager".player_health)
+					$"../PlayerHealth".text = str($"../BattleManager".player_health)
 				else:
 					pass
 				card_being_dragged = null;

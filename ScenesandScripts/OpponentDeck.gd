@@ -18,7 +18,7 @@ const DECKS = {
 func _ready() -> void:
 	randomize()  # Ensures more random results across runs
 	var chosen_deck_number = randi() % 5 + 1
-	card_database_reference = DECKS[chosen_deck_number]
+	card_database_reference = DECKS[1]
 	for card_name in card_database_reference.keys():
 		original_deck.append(card_name)
 	opponent_deck = original_deck.duplicate()

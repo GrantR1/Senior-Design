@@ -5,5 +5,5 @@ func attacking_ability(bm, attacker, defender):
 	print("You have rolled:", dice_roll)
 	attacker.def = dice_roll
 	attacker.get_node("Def").text = str(defender.def)
-	print("defending ability triggered")
+	print("Attacker defense rolled:", attacker.def)
 	pass

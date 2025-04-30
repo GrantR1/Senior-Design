@@ -294,7 +294,10 @@ func try_play_card_attack():
 	print(card_to_play.ability_script)
 	if card_to_play.ability_script and card_to_play.ability_script.has_method("trigger_ability"):
 		card_to_play.ability_script.trigger_ability(self, "opponent")
+		print("Battle Manager:", player_health)
+		$"../PlayerHealth".text = str(player_health)
 		print("can anybody hear me")
+		
 	print("🃏 Added to battlefield:", card_to_play.name, "Type:", card_to_play.card_type)
 	await wait(1)
 
