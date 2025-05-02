@@ -94,15 +94,14 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_dn02k")
 theme_override_font_sizes/normal_font_size = 30
-text = "(Placeholder, add more at somepoint with image examples and make less wordy)
-Each player starts with a set amount of hp
-During your turn you draw to add to your hand, gaining one mana for use
-You can spend this mana to play any cards in your hand.
+text = "Each player starts with a set amount of hp
+During your turn you click on your deck on the left hand side to draw to add to your hand
+You are only allowed to play one card per turn.
+Cards may have a unique ability that can help you move toward victory
 
 Card Types:
-Allies: Your bread and butter attackers, place them down in a lane and they will fire their attacks down the lane at the enemy.
-Monuments: These are landmarks that you can place in your secondary row, and act as passive buffs for the lane or the player.
-Defenders: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
+Allies: Your bread and butter attackers, place them down in a lane and click them, they will unleash their attacks on a card of your choosing
+Guards: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
