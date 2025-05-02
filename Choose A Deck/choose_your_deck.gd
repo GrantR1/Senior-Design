@@ -33,20 +33,17 @@ func _on_exit_pressed() -> void:
 func _on_Deck_One_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Student Deck\n
-	Allies: Undergrad, The Professor, Study Buddy, Atilla the Duck\n
-	Guardians: Stevens’ S.C. Williams Library, University Center Complex\n
-	Spells: Grading Curve, Extra Credit, Prepared to Learn, Failed Test, 
-	Honor Code Violation, Study Session");
+	A generic deck fit for any game!\n
+	This deck is built around representing the mindset and experience of students at Stevens.");
 	DeckVars.your_deck = "deck one"
 	set_process(false);
 	
 func _on_Deck_Two_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Statistics Deck\n
-	Allies: Teachers Assistant, The Professor, Moody Student\n
-	Guardians: S.S. Stevens, Pop Quiz, Stevens Campus Police\n
-	Spells: Extra Credit, Failed Test, Study Session, Tough Classes, 
-	MA-222 Probability and Statistics, MA-623 Stochastic Processes");
+	Roll the dice and check your luck!\n
+	This deck is made around random occurances. 
+	For those with high luck, this deck is by far the most powerful!");
 	DeckVars.your_deck = "deck Two"
 	set_process(false);
 	
@@ -63,15 +60,8 @@ func _on_Deck_Three_Pressed() -> void:
 func _on_Deck_Four_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("History Deck\n
-	Allies: Edwin A. Stevens, William H. Peirce, Henry Morton\n
-	Guardians: The Center for Maritime Systems at Stevens, 
-	Stevens' S.C. Williams Library, Walker Gymnasium\n
-	Spells: Charles V. Schaefer Jr. School of Engineering and Science, 
-	National Center for Secure and Resilient, 
-	Office of Innovation and Entrepreneurship, 
-	The Center for Innovation in Engineering and Science Education (CIESE), 
-	The Center for Environmental Systems (CES), 
-	The Highly Filled Materials Institute (HfMI)");
+	For those truly passionate about Stevens!\n
+	This deck includes a lot of structures and events that have either happened in the past or in the present.");
 	DeckVars.your_deck = "deck Four"
 	set_process(false);
 
