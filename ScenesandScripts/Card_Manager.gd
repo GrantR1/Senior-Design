@@ -33,7 +33,7 @@ func connect_card_signals(card):
 
 func on_hovered_over_card(card):
 	$"../info/Label".text = card.card_description
-	$"../info/Label2".text = card.card_name
+	$"../info/Label2".text = card.card_name + "\nType: " + card.card_type + "\n"
 	if card.card_slot_card_in:
 		return
 	if !is_hovering_on_card:
@@ -47,7 +47,7 @@ func on_hovered_off_card(card):
 			var new_card_hovered = raycast()
 			if new_card_hovered:
 				$"../info/Label".text = new_card_hovered.card_description
-				$"../info/Label2".text = new_card_hovered.card_name
+				$"../info/Label2".text = new_card_hovered.card_name + "\nType: " + new_card_hovered.card_type + "\n"
 				highlight_card(new_card_hovered, true)
 			else:
 				$"../info/Label".text = ""
