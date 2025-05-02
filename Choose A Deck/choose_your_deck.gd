@@ -50,10 +50,8 @@ func _on_Deck_Two_Pressed() -> void:
 func _on_Deck_Three_Pressed() -> void:
 	deckInfoText.clear();
 	deckInfoText.add_text("Mixed Deck\n
-	Allies: Study Buddy, Atilla the Duck, Residential Advisor\n
-	Guardians: S.S. Stevens, S.S Stevens Victory, Walker Gymnasium\n
-	Spells: TI-Nspire Graphing Calculator, Failed Test, A+ Test, 
-	Sleep Deprived, Tough Classes, Honor Code Violation");
+	A mixed bag of tricks, goodies, and Stevens Spirit!\n
+	This deck is a mixed bag of all of the other decks little gimmicks and playstyles.");
 	DeckVars.your_deck = "deck three"
 	set_process(false);
 	
