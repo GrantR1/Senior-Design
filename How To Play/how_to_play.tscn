@@ -100,8 +100,8 @@ You are only allowed to play one card per turn.
 Cards may have a unique ability that can help you move toward victory
 
 Card Types:
-Allies: Your bread and butter attackers, place them down in a lane and click them, they will unleash their attacks on a card of your choosing
-Guards: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
+Spells: Your bread and butter attackers, place them down in a lane and click them, they will unleash their attacks on a card of your choosing
+Guardians: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
