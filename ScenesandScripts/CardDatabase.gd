@@ -49,7 +49,7 @@ const CARDS4 = { #Mixed Deck
 	"A+ Test": [2, 2, 1, "Spell", "By the power of study!", "res://Abilities/Plus_1_atk_for_everyone.gd","A+ Test"],
 	"Sleep Deprived": [1,2,2, "Spell", "The students yearn for their bed", "res://Abilities/Fireball.gd","Sleep Deprived"],
 	"Tough Classes": [2, 2, 2, "Spell", "Finally! Classes for tough students!", "res://Abilities/Drain_Atk_Field.gd","Tough Classes"],
-	"Honor Code Violation": [5, 1, 4, "Spell", "Cheaters never prosper", "res://Abilities/Deal_1_to_all.gd","Honor Code Violation"]
+	"Honor Code Violation": [5, 2, 4, "Spell", "Cheaters never prosper", "res://Abilities/Deal_1_to_all.gd","Honor Code Violation"]
 }
 
 const CARDS5 = { #History Deck
