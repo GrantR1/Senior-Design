@@ -6,7 +6,7 @@ signal left_mouse_button_released
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_DECK = 4
 const COLLISION_MASK_OPPONENT_CARD = 8
-
+var is_hovering_on_card;
 var card_manager_reference
 var deck_reference
 
@@ -24,6 +24,7 @@ func _input(event: InputEvent):
 			emit_signal("left_mouse_button_released")
 			pass
 
+			
 func raycast_at_cursor ():
 	var space_state = get_world_2d().direct_space_state;
 	var parameters = PhysicsPointQueryParameters2D.new();

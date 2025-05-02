@@ -113,7 +113,7 @@ func direct_attack(attacking_card, Attacker):
 			
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(attacking_card, "position", attacking_card.card_slot_card_in.position, CARD_SPEED)
-		attacking_card.z_index = 1
+		attacking_card.z_index = 2
 		await wait(0.5)
 		if player_health <= 0:
 			await wait(0.5);
@@ -174,7 +174,7 @@ func attack(attacking_card, defending_card, attacker):
 		attacking_card.def = max(0,attacking_card.def - defending_card.attack)
 		attacking_card.get_node("Def").text = str(attacking_card.def)
 		await wait(1)
-		attacking_card.z_index = 1
+		attacking_card.z_index = 2
 		var card_was_destroyed = false
 		#destroy cards if def = 0
 		var to_destroy = []

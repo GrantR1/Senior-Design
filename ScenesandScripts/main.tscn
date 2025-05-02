@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://bjbbls5sh7y62" path="res://ScenesandScripts/Enemy_Hand.gd" id="12_22two"]
 [ext_resource type="Texture2D" uid="uid://b1p8t7566xtfv" path="res://Sprites/cardslot.png" id="13_22two"]
 [ext_resource type="Texture2D" uid="uid://r0hct0dr146d" path="res://Sprites/manhattan.png" id="14_emsc3"]
-[ext_resource type="Texture2D" uid="uid://c7l41jnd34k3c" path="res://Sprites/0KtqTr.png" id="15_bje5l"]
+[ext_resource type="Texture2D" uid="uid://chwha4y01hnpp" path="res://Sprites/notepad.png" id="15_bje5l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c38p5"]
 size = Vector2(320, 448)
@@ -211,32 +211,36 @@ scale = Vector2(1.5, 1.5)
 text = "Player Health"
 
 [node name="info" type="Sprite2D" parent="."]
-position = Vector2(1689, 739)
-scale = Vector2(1.29611, 1.34065)
+position = Vector2(1702, 686.5)
+scale = Vector2(1.41602, 1.39648)
 texture = ExtResource("15_bje5l")
 
 [node name="Label" type="Label" parent="info"]
 anchors_preset = -1
-anchor_left = 0.125
-anchor_top = 0.259
-anchor_right = 0.872
-anchor_bottom = 0.84
-offset_left = -173.375
-offset_top = -176.427
-offset_right = -173.584
-offset_bottom = -176.52
+anchor_left = 0.258
+anchor_top = 0.465
+anchor_right = 0.697
+anchor_bottom = 0.865
+offset_left = -256.096
+offset_top = -256.08
+offset_right = -255.864
+offset_bottom = -255.88
 grow_horizontal = 2
 grow_vertical = 2
+autowrap_mode = 2
+justification_flags = 131
 
 [node name="Label2" type="Label" parent="info"]
 anchors_preset = -1
-anchor_left = 0.133
-anchor_top = 0.06
-anchor_right = 0.842
-anchor_bottom = 0.126
-offset_left = -169.597
-offset_top = -176.329
-offset_right = -173.62
-offset_bottom = -176.627
+anchor_left = 0.259
+anchor_top = 0.253
+anchor_right = 0.708
+anchor_bottom = 0.363
+offset_left = -256.194
+offset_top = -255.925
+offset_right = -256.082
+offset_bottom = -256.245
+vertical_alignment = 3
+autowrap_mode = 3
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
