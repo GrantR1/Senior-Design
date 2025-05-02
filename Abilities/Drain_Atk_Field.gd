@@ -9,7 +9,7 @@ func trigger_ability(battle_manager_reference, user):
 				card.attack = 0
 	else:
 		for card in battle_manager_reference.opponent_cards_on_battlefield:
-			card.attack = max(0, card.attack + 1)
+			card.attack = max(0, card.attack - 1)
 			card.get_node("Attack").text = str(card.attack)
 			if card.attack < 0:
 				card.attack = 0
