@@ -19,7 +19,7 @@ const CARDS2 = { #Student Deck
 	"Grading Curve": [2, 2, 1, "Spell", "Ability \n +1 Health \n Fear the professor who uses it and beg the others to get it.", "res://Abilities/More_HP_Pls.gd","Grading Curve"],
 	"Extra Credit": [1, 1, 2, "Spell", "Ability \n Increase all your attack by 1 \n A savior for those who have fallen behind.", "res://Abilities/Plus_1_atk_for_everyone.gd","Extra Credit"],
 	"Failed Test": [4, 1, 3, "Spell", "Ability \n Deal one damage to opponent on play \n Maybe next time, we study at least 2 days in advance!", "res://Abilities/Fireball.gd","Failed Test"],
-	"Honor Code Violation": [4, 1, 4, "Spell", "Ability \n Deal one damage to everything \n I pledge my honor that I have abided by the Stevens Honors System. There, now I can hand this in as my final project.", "res://Abilities/Deal_1_to_all.gd","Honor Code Violation"],
+	"Honor Code Violation": [4, 2, 4, "Spell", "Ability \n Deal one damage to everything \n I pledge my honor that I have abided by the Stevens Honors System. There, now I can hand this in as my final project.", "res://Abilities/Deal_1_to_all.gd","Honor Code Violation"],
 	"Study Session": [1, 1, 2, "Spell", "Ability \n Increase all your attack by 1 \n Home to the infamous Study Buddy!", "res://Abilities/Plus_1_atk_for_everyone.gd","Study Session"]
 }
 
