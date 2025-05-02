@@ -95,6 +95,7 @@ func highlight_card(card, hovered):
 func start_drag(card):
 	card_being_dragged = card
 	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
+	card.z_index = 100
 func finish_drag():
 	if not card_being_dragged:
 		return
@@ -108,8 +109,8 @@ func finish_drag():
 				#card scalling down
 				played_guardian_card_this_turn = true
 				card_being_dragged.scale = Vector2(CARD_SMALLER_SCALE, CARD_SMALLER_SCALE);
-				#he does this to fix drag over issues but it used to break it vvv
-				card_being_dragged.z_index = -1;
+				#he does this to fix drag over issues but it used to break it vvv I changed
+				card_being_dragged.z_index = 2;
 				is_hovering_on_card = false
 				card_being_dragged.card_slot_card_in = card_slot_found
 				player_hand_ref.remove_card(card_being_dragged)
@@ -142,6 +143,7 @@ func finish_drag():
 				card_being_dragged = null;
 				return
 	player_hand_ref.add_card_to_hand(card_being_dragged, DEFAULT_CARD_SPEED)
+	card_being_dragged.z_index = 3
 	card_being_dragged = null;
 
 func unselect_selected_guardian():
