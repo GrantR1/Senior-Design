@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b1p8t7566xtfv" path="res://Sprites/cardslot.png" id="13_22two"]
 [ext_resource type="Texture2D" uid="uid://r0hct0dr146d" path="res://Sprites/manhattan.png" id="14_emsc3"]
 [ext_resource type="Texture2D" uid="uid://chwha4y01hnpp" path="res://Sprites/notepad.png" id="15_bje5l"]
-[ext_resource type="AudioStream" uid="uid://djxxiyv3i3ehe" path="res://Sprites/GameBattleTheme.mp3" id="16_2x6nq"]
+[ext_resource type="AudioStream" uid="uid://bweaqmtncdufv" path="res://Sprites/StevensGame_oneloop.mp3" id="16_2x6nq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c38p5"]
 size = Vector2(320, 448)
