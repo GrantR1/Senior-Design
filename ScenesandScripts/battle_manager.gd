@@ -232,6 +232,7 @@ func destroy_card(card, card_owner):
 				empty_guardian_card_slot.append(card.card_slot_card_in)
 				used_guardian_slot.erase(card.card_slot_card_in)
 	print("HUHHHH")
+	#card.z_index = 6 #checking to see if I can get it to be on top
 	card.card_slot_card_in.card_in_slot = false #error hmm
 	#print(card.card_slot_card_in.get_class())
 	card.card_slot_card_in = null

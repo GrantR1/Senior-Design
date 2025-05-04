@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ciwgdbra2wgnf"]
+[gd_scene load_steps=19 format=3 uid="uid://ciwgdbra2wgnf"]
 
 [ext_resource type="Script" uid="uid://dvt2ejwepwy0n" path="res://ScenesandScripts/Card_Manager.gd" id="1_phl1v"]
 [ext_resource type="Script" uid="uid://dhixoxfbxace8" path="res://ScenesandScripts/SpellCard_slot.gd" id="3_cggtr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b800oqfvjpj0n" path="res://ScenesandScripts/Player_Hand.gd" id="5_n4pet"]
 [ext_resource type="Script" uid="uid://ddhidwjrdonsx" path="res://ScenesandScripts/deck.gd" id="5_rcqkq"]
 [ext_resource type="Script" uid="uid://b7ffegc34q5fw" path="res://ScenesandScripts/InputManager.gd" id="7_e3vy2"]
+[ext_resource type="AudioStream" uid="uid://bmrxblnpdrll3" path="res://DrawCard.mp3" id="10_cy1m4"]
 [ext_resource type="Script" uid="uid://cwp1w6fbunymc" path="res://ScenesandScripts/OpponentDeck.gd" id="10_gbgoc"]
 [ext_resource type="Script" uid="uid://fw6bgj21rwwk" path="res://ScenesandScripts/battle_manager.gd" id="10_s7owu"]
 [ext_resource type="Script" uid="uid://bjbbls5sh7y62" path="res://ScenesandScripts/Enemy_Hand.gd" id="12_22two"]
@@ -247,5 +248,10 @@ autowrap_mode = 3
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_2x6nq")
 autoplay = true
+
+[node name="CardDrawnSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(150, 900)
+scale = Vector2(0.8, 0.786)
+stream = ExtResource("10_cy1m4")
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]

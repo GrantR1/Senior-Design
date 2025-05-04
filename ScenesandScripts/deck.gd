@@ -52,6 +52,7 @@ func draw_card():
 		return
 	if $"../PlayerHand".player_hand.size() >= MAX_HAND_SIZE:
 		return
+	get_node("../CardDrawnSound").play()
 	drawn_card_this_turn = true;
 	var card_drawn_name = player_deck[0]
 	player_deck.erase(card_drawn_name)
