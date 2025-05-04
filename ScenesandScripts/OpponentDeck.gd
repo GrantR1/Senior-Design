@@ -35,6 +35,7 @@ func draw_card():
 	print("Pizza")
 	if $"../EnemyHand".opponent_hand.size() >= MAX_HAND_SIZE:
 		return
+	get_node("../CardDrawnSound").play()
 	var card_drawn_name = opponent_deck[0]
 	opponent_deck.erase(card_drawn_name)
 	

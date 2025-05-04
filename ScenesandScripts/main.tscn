@@ -253,5 +253,6 @@ autoplay = true
 position = Vector2(150, 900)
 scale = Vector2(0.8, 0.786)
 stream = ExtResource("10_cy1m4")
+volume_db = 2.0
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
