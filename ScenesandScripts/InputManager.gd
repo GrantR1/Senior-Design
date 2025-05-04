@@ -11,6 +11,9 @@ var card_manager_reference
 var deck_reference
 
 func _ready() -> void:
+	if MusicManager.playing:
+		print("I made it into music coach!")
+		MusicManager.stop()
 	card_manager_reference = $"../Card Manager"
 	deck_reference = $"../Deck"
 

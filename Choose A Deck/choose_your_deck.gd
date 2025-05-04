@@ -16,6 +16,8 @@ var selection = null;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not MusicManager.playing:
+		MusicManager.play()
 	exit_button.button_down.connect(_on_exit_pressed);
 	Confirm_Selection.button_down.connect(_on_Confirm_Selection_Pressed);
 	Deck_One.button_down.connect(_on_Deck_One_Pressed);

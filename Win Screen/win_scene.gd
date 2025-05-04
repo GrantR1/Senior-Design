@@ -7,6 +7,8 @@ var score
 @onready var show_score = $Score as Label
 
 func _ready():
+	if not MusicManager.playing:
+		MusicManager.play()
 	score = global.final_turn_count
 	if score != null and score != 0:
 		print(score);

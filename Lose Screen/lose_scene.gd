@@ -1,7 +1,8 @@
 extends Control
 
 func _ready():
-	pass
+	if not MusicManager.playing:
+		MusicManager.play()
 
 
 func _on_play_again_pressed() -> void:

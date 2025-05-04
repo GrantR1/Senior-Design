@@ -22,6 +22,7 @@ CardDatabase="*res://ScenesandScripts/CardDatabase.gd"
 global="*res://global.gd"
 Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
 PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
+MusicManager="*res://MusicPlayer.tscn"
 
 [display]
 

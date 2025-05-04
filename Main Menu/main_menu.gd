@@ -25,6 +25,8 @@ func handle_connecting_signals() -> void:
 	leaderboard.pressed.connect(_on_leaderboard_pressed);
 	
 func _ready() -> void:
+	if not MusicManager.playing:
+		MusicManager.play()
 	about_page.visible = false;
 	handle_connecting_signals();
 
