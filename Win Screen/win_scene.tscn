@@ -213,6 +213,19 @@ offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
+item_count = 6
+popup/item_0/text = "Foundation 1"
+popup/item_0/id = 0
+popup/item_1/text = "Foundation 2"
+popup/item_1/id = 1
+popup/item_2/text = "Foundation 3"
+popup/item_2/id = 2
+popup/item_3/text = "Foundation 3"
+popup/item_3/id = 3
+popup/item_4/text = "Foundation 4"
+popup/item_4/id = 4
+popup/item_5/text = "Foundation 5"
+popup/item_5/id = 5
 
 [node name="Submit_vote" type="Button" parent="."]
 offset_left = 1449.0

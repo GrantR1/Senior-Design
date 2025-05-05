@@ -72,9 +72,9 @@ func refresh_scores():
 			row.set_text(0, str(score["rank"]))
 			row.set_text(1, str(score["name"]))
 			row.set_text(2, str(int(score["score"])))
-			if score["is_current_player"]:
-				for i in range(3):
-					row.set_custom_bg_color(i, current_player_highlight_color)
+			#if score["is_current_player"]:
+				#for i in range(3):
+					#row.set_custom_bg_color(i, current_player_highlight_color)
 	else:
 		var row: TreeItem = score_list.create_item(root)
 		if score_data["error"]:
