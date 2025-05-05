@@ -86,6 +86,7 @@ func direct_attack(attacking_card, Attacker):
 	if !attacking_card.is_inside_tree():
 		print("Error: attacking_card is not inside the tree!")
 		return
+	get_node("../CardAttackSound").play() #play attack sound
 	if attacking_card.card_type == "Spell":
 		var new_pos_y
 		if Attacker == "Opponent":
@@ -141,6 +142,7 @@ func attack(attacking_card, defending_card, attacker):
 	if attacking_card.card_type == "Guardian":
 		print("Guardian is not attacking!")
 		return
+	get_node("../CardAttackSound").play() #play attack sound
 	if attacker == "Player":
 		player_is_attacking = true
 		$"../EndTurnButton".disabled = true

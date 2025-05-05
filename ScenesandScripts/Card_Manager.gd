@@ -114,6 +114,7 @@ func finish_drag():
 				is_hovering_on_card = false
 				card_being_dragged.card_slot_card_in = card_slot_found
 				player_hand_ref.remove_card(card_being_dragged)
+				get_node("../CardPlacedSound").play() #added playing card sound
 				#card dragged into empty slot
 				card_being_dragged.position = card_slot_found.position
 				card_slot_found.card_in_slot = true

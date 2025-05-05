@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ciwgdbra2wgnf"]
+[gd_scene load_steps=21 format=3 uid="uid://ciwgdbra2wgnf"]
 
 [ext_resource type="Script" uid="uid://dvt2ejwepwy0n" path="res://ScenesandScripts/Card_Manager.gd" id="1_phl1v"]
 [ext_resource type="Script" uid="uid://dhixoxfbxace8" path="res://ScenesandScripts/SpellCard_slot.gd" id="3_cggtr"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://r0hct0dr146d" path="res://Sprites/manhattan.png" id="14_emsc3"]
 [ext_resource type="Texture2D" uid="uid://chwha4y01hnpp" path="res://Sprites/notepad.png" id="15_bje5l"]
 [ext_resource type="AudioStream" uid="uid://bweaqmtncdufv" path="res://Sprites/StevensGame_oneloop.mp3" id="16_2x6nq"]
+[ext_resource type="AudioStream" uid="uid://dfkadigpt8cvq" path="res://PlaceCard.mp3" id="18_rnogk"]
+[ext_resource type="AudioStream" uid="uid://bpvg56ifdqv4w" path="res://CardAttackSound.mp3" id="19_nmfo3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c38p5"]
 size = Vector2(320, 448)
@@ -254,5 +256,13 @@ position = Vector2(150, 900)
 scale = Vector2(0.8, 0.786)
 stream = ExtResource("10_cy1m4")
 volume_db = 2.0
+
+[node name="CardPlacedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_rnogk")
+volume_db = 10.0
+
+[node name="CardAttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_nmfo3")
+volume_db = 24.0
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
