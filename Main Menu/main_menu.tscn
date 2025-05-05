@@ -66,36 +66,55 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_312x8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -684.5
+offset_top = 25.0
+offset_right = 684.5
+offset_bottom = 195.0
+grow_horizontal = 2
 theme_override_constants/separation = 60
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("1_oawyu")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 100
 text = "Stevens Day of Giving"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -379.5
+offset_right = 240.0
+offset_bottom = 537.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator2" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Start Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Start Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
@@ -103,17 +122,17 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvjj2")
 text = "Start"
 
-[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator3" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="How To Play" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="How To Play" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
@@ -121,17 +140,17 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvjj2")
 text = "How To Play"
 
-[node name="Seperator5" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator5" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="About Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="About Button" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
@@ -139,14 +158,17 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvjj2")
 text = "About"
 
-[node name="Leaderboard" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator6" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Leaderboard" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
 layout_mode = 2
 size_flags_vertical = 3
@@ -154,17 +176,36 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvjj2")
 text = "Leaderboard"
 
-[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator7" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Stevens Day of Giving" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Donate_Leaderboard" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(480, 128)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a35of")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xs5ai")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d6j10")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvjj2")
+text = "Donation
+Leaderboard"
+
+[node name="Seperator4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Stevens Day of Giving" type="LinkButton" parent="VBoxContainer"]
 visible = false
 custom_minimum_size = Vector2(120, 64)
 layout_mode = 2
@@ -180,7 +221,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_dl100")
 text = "Stevens Day of Giving"
 underline = 1
 
-[node name="Donate" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Donate" type="LinkButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(120, 64)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -190,7 +231,7 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.917647, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dl100")
 text = "Donate"
 underline = 1
@@ -211,4 +252,6 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Donate_Leaderboard" to="." method="_on_donate_leaderboard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Donate" to="." method="_on_donate_pressed"]

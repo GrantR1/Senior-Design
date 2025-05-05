@@ -1,29 +1,29 @@
 class_name MainMenu
 extends Control
 
-@onready var start_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start Button" as Button;
-@onready var about_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/About Button" as Button;
-@onready var donate_button = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Donate as LinkButton;
-@onready var stevensDayOfGiving_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Stevens Day of Giving" as LinkButton;
-@onready var how_to_play_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/How To Play" as Button;
+@onready var start_button = $"VBoxContainer/Start Button" as Button;
+@onready var about_button = $"VBoxContainer/About Button" as Button;
+@onready var donate_button = $VBoxContainer/Donate as LinkButton;
+#@onready var stevensDayOfGiving_button = $"MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Stevens Day of Giving" as LinkButton;
+@onready var how_to_play_button = $"VBoxContainer/How To Play" as Button;
 @onready var about_page = $About as About;
 @onready var how_to_play = $"How To Play" as HowToPlay;
 @onready var choose_your_deck = $"Choose A Deck" as ChooseYourDeck;
 @onready var margin_container = $MarginContainer as MarginContainer;
-@onready var leaderboard = $MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Leaderboard as Button;
-
+@onready var leaderboard = $VBoxContainer/Leaderboard as Button;
+@onready var donate_leaderboard = $VBoxContainer/Donate_Leaderboard as Button;
 # Called when the node enters the scene tree for the first time.
 func handle_connecting_signals() -> void:
 	start_button.pressed.connect(_on_start_button_pressed);
 	about_button.pressed.connect(_on_about_button_pressed);
 	how_to_play_button.pressed.connect(_on_howToPlay_button_pressed);
 	donate_button.pressed.connect(_on_donate_pressed);
-	stevensDayOfGiving_button.pressed.connect(_on_stevensDayOfDiving_website_pressed);
+	#stevensDayOfGiving_button.pressed.connect(_on_stevensDayOfDiving_website_pressed);
 	about_page.exit_about.connect(_on_exit_about);
 	how_to_play.exit_about.connect(_on_exit_howToPlay);
 	#choose_your_deck.exit_about.connect(_on_exit_chooseYourDeck);
 	leaderboard.pressed.connect(_on_leaderboard_pressed);
-	
+	donate_leaderboard.pressed.connect(_on_donate_leaderboard_pressed);
 func _ready() -> void:
 	if not MusicManager.playing:
 		MusicManager.play()
@@ -85,3 +85,7 @@ func _on_exit_howToPlay() -> void:
 
 func _on_leaderboard_pressed() -> void:
 	get_tree().change_scene_to_file("res://addons/quiver_leaderboards/leaderboard_ui.tscn");
+
+
+func _on_donate_leaderboard_pressed() -> void:
+	get_tree().change_scene_to_file("res://Donations_Leaderboard/donations_leaderboard_ui.tscn");
