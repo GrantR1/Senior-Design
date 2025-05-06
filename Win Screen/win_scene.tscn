@@ -213,19 +213,17 @@ offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-item_count = 6
+item_count = 5
 popup/item_0/text = "Foundation 1"
 popup/item_0/id = 0
 popup/item_1/text = "Foundation 2"
 popup/item_1/id = 1
 popup/item_2/text = "Foundation 3"
 popup/item_2/id = 2
-popup/item_3/text = "Foundation 3"
-popup/item_3/id = 3
-popup/item_4/text = "Foundation 4"
-popup/item_4/id = 4
-popup/item_5/text = "Foundation 5"
-popup/item_5/id = 5
+popup/item_3/text = "Foundation 4"
+popup/item_3/id = 4
+popup/item_4/text = "Foundation 5"
+popup/item_4/id = 5
 
 [node name="Submit_vote" type="Button" parent="."]
 offset_left = 1449.0
@@ -258,11 +256,11 @@ autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1388.0
-offset_top = 314.0
-offset_right = 1772.0
-offset_bottom = 349.0
-theme_override_font_sizes/font_size = 25
+offset_left = 1341.0
+offset_top = 305.0
+offset_right = 1801.0
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 30
 text = "Choose a foundation to vote for"
 
 [connection signal="pressed" from="VBoxContainer2/Submit" to="." method="_on_submit_pressed"]

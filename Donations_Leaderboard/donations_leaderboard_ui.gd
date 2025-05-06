@@ -37,6 +37,7 @@ var donations_leaderboard_id = "stevens-day-of-givin-donations-vW2I"
 @onready var scores_label := %ScoresLabel
 @onready var title_label := %TitleLabel
 @onready var exit := %Exit
+@onready var vote := %Vote
 
 var vote_counts := {}
 
@@ -51,6 +52,9 @@ func _ready() -> void:
 		column_index += 1
 	if leaderboard_id:
 		refresh_scores()
+
+func sort_descending(a, b):
+	return a[0] > b[0]
 
 func refresh_scores():
 	if not leaderboard_id:
@@ -68,8 +72,6 @@ func refresh_scores():
 		row.set_text(0, "No votes yet")
 		return
 	
-	#var score_data: Dictionary
-	
 	for vote in all_votes["scores"]:
 		var foundation_name : String =  vote.get("name", "")
 		if foundation_name in vote_counts:
@@ -80,6 +82,8 @@ func refresh_scores():
 	var vote_array := []
 	for name in vote_counts.keys():
 		vote_array.append({"name": name, "votes": vote_counts[name]})
+	
+	vote_array.sort_custom(func(a, b): return a["votes"] > b["votes"])
 	
 	var rank = 1
 	for entry in vote_array:
@@ -127,3 +131,7 @@ func _on_next_button_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Main Menu/main_menu.tscn")
+
+
+func _on_vote_pressed() -> void:
+	get_tree().change_scene_to_file("res://Donations_Leaderboard/vote_scene.tscn")

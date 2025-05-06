@@ -1,0 +1,202 @@
+[gd_scene load_steps=13 format=3 uid="uid://bplpbp7qe7wmh"]
+
+[ext_resource type="Texture2D" uid="uid://bqgal3ro5icae" path="res://Win Screen/manhattan.png" id="1_565vo"]
+[ext_resource type="Script" uid="uid://df1giejinkg3c" path="res://Win Screen/win_scene.gd" id="2_1cvvc"]
+[ext_resource type="Script" uid="uid://c4fidc1xdavmf" path="res://Donations_Leaderboard/vote_scene_exit.gd" id="3_v1qmo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1cvvc"]
+texture = ExtResource("1_565vo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1qmo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7pfh"]
+bg_color = Color(0.635294, 0.635294, 0.635294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_it52i"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swcqh"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7pfh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqw4k"]
+bg_color = Color(0.635294, 0.635294, 0.635294, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eipbc"]
+bg_color = Color(0.823529, 0.823529, 0.823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke7ew"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_offset = Vector2(0, 3.41)
+
+[node name="VoteScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1cvvc")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.52312, 0.52312, 0.52312, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.016
+anchor_bottom = 1.0
+offset_right = -30.7201
+offset_bottom = -6.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1cvvc")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -55.0
+offset_right = 243.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+item_count = 6
+popup/item_0/text = "Foundation 1"
+popup/item_0/id = 0
+popup/item_1/text = "Foundation 2"
+popup/item_1/id = 1
+popup/item_2/text = "Foundation 3"
+popup/item_2/id = 2
+popup/item_3/text = "Foundation 3"
+popup/item_3/id = 3
+popup/item_4/text = "Foundation 4"
+popup/item_4/id = 4
+popup/item_5/text = "Foundation 5"
+popup/item_5/id = 5
+
+[node name="Submit_voteTwo" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = 81.5
+offset_right = 118.0
+offset_bottom = 170.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v1qmo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_l7pfh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_it52i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_swcqh")
+text = "Submit Vote
+"
+
+[node name="VoteConfirmation_Two" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = 78.0
+offset_right = 165.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -148.5
+offset_right = 345.0
+offset_bottom = -73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Choose a foundation to vote for"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -140.0
+offset_right = 105.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l7pfh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_gqw4k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eipbc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ke7ew")
+text = "Exit"
+script = ExtResource("3_v1qmo")
+
+[connection signal="pressed" from="Submit_voteTwo" to="." method="_on_submit_vote_two_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]

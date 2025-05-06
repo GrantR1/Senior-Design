@@ -132,12 +132,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -153.0
-offset_top = 402.5
-offset_right = 153.0
-offset_bottom = 511.5
+offset_top = 322.0
+offset_right = 163.0
+offset_bottom = 502.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 15
+
+[node name="Vote" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j14vu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_g0ljn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gnino")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e64v3")
+text = "Vote"
 
 [node name="Exit" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
@@ -155,4 +169,5 @@ text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/Nav/PrevButton" to="." method="_on_prev_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Nav/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Vote" to="." method="_on_vote_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Exit" to="." method="_on_exit_pressed"]
