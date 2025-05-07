@@ -121,7 +121,7 @@ Draw Card -> Play Card -> Attack -> End Turn
 However, the three main actions can be done in any order, with each one being optional.
 
 Card Abilities:
-Each card has listed on it an ability which changes something about the game. For example, one card will reduce the health of everything on the field by one when it is played. These abilities disrupt typical gameplay and add a new level of complexity to be explored. This is especially true as many effects, like the one listed in the example, can sometimes harm you rather than help you. So, have fun with them!"
+Each card has listed on it an ability which changes something about the game. For example, one card will reduce the health of everything on the field by one when it is played. These abilities disrupt typical gameplay and add a new level of complexity to be explored. This is especially true as many effects, like the one listed in the example, can sometimes harm you rather than help you. So, have fun!"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
