@@ -213,19 +213,18 @@ offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 25
-item_count = 5
-popup/item_0/text = "Foundation 1"
+item_count = 4
+popup/item_0/text = "The Stevens Fund"
 popup/item_0/id = 0
-popup/item_1/text = "Foundation 2"
+popup/item_1/text = "Stevens Scholarship Fund"
 popup/item_1/id = 1
-popup/item_2/text = "Foundation 3"
+popup/item_2/text = " Stevens Student Emergency Fund"
 popup/item_2/id = 2
-popup/item_3/text = "Foundation 4"
+popup/item_3/text = "Impact Assistance Term Scholarship Fund"
 popup/item_3/id = 4
-popup/item_4/text = "Foundation 5"
-popup/item_4/id = 5
 
 [node name="Submit_vote" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1449.0
 offset_top = 440.0
 offset_right = 1685.0
@@ -256,12 +255,12 @@ autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1341.0
-offset_top = 305.0
-offset_right = 1801.0
-offset_bottom = 347.0
-theme_override_font_sizes/font_size = 30
-text = "Choose a foundation to vote for"
+offset_left = 1379.0
+offset_top = 312.0
+offset_right = 1769.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 32
+text = "Choose a fund to vote for"
 
 [connection signal="pressed" from="VBoxContainer2/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]

@@ -64,36 +64,30 @@ func vote_action() -> void:
 	var selected_index = drop_down.get_selected()
 	selected_foundation = drop_down.get_item_text(selected_index)
 	
-	if(selected_foundation == "Foundation 1"):
-		var current_score = await get_current_score("Foundation 1")
+	if(selected_foundation == "The Stevens Fund"):
+		var current_score = await get_current_score("The Stevens Fund")
 		if(current_score > 0):
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Stevens Fund")
 		else:
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
-	if(selected_foundation == "Foundation 2"):
-		var current_score = await get_current_score("Foundation 2")
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Stevens Fund")
+	if(selected_foundation == "Stevens Scholarship Fund"):
+		var current_score = await get_current_score("Stevens Scholarship Fund")
 		if(current_score > 0):
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Scholarship")
 		else:
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
-	if(selected_foundation == "Foundation 3"):
-		var current_score = await get_current_score("Foundation 3")
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Scholarship")
+	if(selected_foundation == "Stevens Student Emergency Fund"):
+		var current_score = await get_current_score("Stevens Student Emergency Fund")
 		if(current_score > 0):
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Emergency Fund")
 		else:
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
-	if(selected_foundation == "Foundation 4"):
-		var current_score = await get_current_score("Foundation 4")
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Emergency Fund")
+	if(selected_foundation == "Impact Assistance Term Scholarship Fund"):
+		var current_score = await get_current_score("Impact Assistance Term Scholarship Fund")
 		if(current_score > 0):
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Assistance Fund")
 		else:
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
-	if(selected_foundation == "Foundation 5"):
-		var current_score = await get_current_score("Foundation 5")
-		if(current_score > 0):
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
-		else:
-			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, selected_foundation)
+			await Leaderboards.post_guest_score(donations_leaderboard_id, 1, "Assistance Fund")
 	
 	has_voted = true
 	

@@ -40,7 +40,12 @@ var donations_leaderboard_id = "stevens-day-of-givin-donations-vW2I"
 @onready var vote := %Vote
 
 var vote_counts := {}
-
+var foundation_names = {
+	"Stevens Fund" : "The Stevens Fund",
+	"Scholarship" : "Stevens Scholarship Fund",
+	"Emergency Fund" : "Stevens Student Emergency Fund",
+	"Assistance Fund" : "Impact Assistance Term Scholarship Fund"
+}
 
 func _ready() -> void:
 	score_list.set_column_expand_ratio(1, 3)
@@ -89,7 +94,8 @@ func refresh_scores():
 	for entry in vote_array:
 		var row: TreeItem = score_list.create_item(root)
 		row.set_text(0, str(rank))
-		row.set_text(1, entry["name"])
+		var full_name = foundation_names.get(entry["name"], entry["name"])
+		row.set_text(1, full_name)
 		row.set_text(2, str(entry["votes"]))
 		rank += 1
 	
