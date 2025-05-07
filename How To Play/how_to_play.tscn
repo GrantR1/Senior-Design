@@ -94,14 +94,32 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_dn02k")
 theme_override_font_sizes/normal_font_size = 30
-text = "Each player starts with a set amount of hp
-During your turn you click on your deck on the left hand side to draw to add to your hand
-You are only allowed to play one card per turn.
-Cards may have a unique ability that can help you move toward victory
+text = "Video Tutorial:
+https://www.youtube.com/watch?v=oBq2EVQHJNI
 
-Card Types:
-Spells: Your bread and butter attackers, place them down in a lane and click them, they will unleash their attacks on a card of your choosing
-Guardians: Placed in the primary zone instead of an attacker, have hp but no attack, can have special effects aswell."
+Objective:
+The goal of the game is to make your opponent's health drop to 0 before your opponent does the same to you.
+
+Board Layout:
+The game board is laid out as a 4 by 4 grid. On this grid, columns are referred to as lanes. From top to bottom, the rows represent the opponent's spell slots, the opponent's guardian slots, your guardian slots, and your spell slots for each lane. A card is considered \"on the field\" when it is in one of these 16 slots and, in general, this area is collectively referred to as the field. To the left, you have both players' health and discard piles. At the bottom left, you have your draw pile and at the top right is your opponent's draw pile. Across the top of the screen is your opponent's hand. Only the opponent can see these cards. Across the bottom of the screen is your hand. These cards are not seen by your opponent. A player's hand can hold up to seven cards. Lastly, at the bottom right displays information about the currently highlighted card. This states the card's name, type, ability, and description.
+
+Cards:
+Each card has displayed on it art that makes the card recognizable at a glance. Hovering over a card will display the most vital information. Beyond that, each card also displays an attack stat (left) and a health stat (right). Attack is the amount of damage a spell card deals when it attacks. Health is how much damage a card can take before it's discarded. Cards come in two types:
+Spells: These cards can be played in the topmost row by your opponent or in the bottommost row by you. Unlike what the name suggests, these cards are your main attackers. When appropriate to do so, they can attack either your opponent's cards, or if your opponent has no cards on the field, the opponent directly.
+Guardians: These cards are played in the top middle row by your opponent or in the bottom middle row by you. These cards are incapable of attacking. However, in return, they provide extra defense for your spells. If a guardian and a spell are in the same lane, only the guardian can be attacked.
+
+Starting The Game:
+Once you pick your deck, the opponent will proceed to do the same and the game will begin. Once this happens, both players will automatically draw 5 cards from their draw piles and each player will have their health set to 10. The game will then always begin with your turn. Your turn will be indicated by the \"End Turn\" button that will appear in the top left of the screen. On your first turn, you will be able to play a card and attack like normal; however, you will not be able to draw a card.
+
+Turns:
+On your turn, the first thing you should do is click on your draw pile to draw a card. You are not required to draw a card nor are you obligated to do so as your first action. However, there is no situation where not doing so is advantageous. As mentioned above, if it is your first turn, you are not able to draw a card. Also on your turn, you will be able to play a card by dragging it from your hand to an empty spot on your side of the field (bottom two rows). On each turn, you can only play at most one card. Remember, spells can only go in the lower spell slots and guardians can only go in the upper guardian slots. If you have any spell cards on the field, clicking on them will ready them to attack. If your opponent has any cards on the field, clicking on them will cause your spell card to attack that card. If there are no cards on the opponent's side of the field, spell cards will automatically attack the opponent, lowering their health. Remember, if the opponent has a guardian and spell in the same lane, if the spell is clicked, the guardian will be targeted instead. Attacks reduce the target’s health by the attacking card’s attack value. Each spell card can only attack once per turn. Once a card's health reaches 0, they are sent to the discard pile. Once you're done with your turn, click the \"End Turn\" button at the top left.
+
+In short, a typical turn can be modeled as:
+Draw Card -> Play Card -> Attack -> End Turn
+However, the three main actions can be done in any order, with each one being optional.
+
+Card Abilities:
+Each card has listed on it an ability which changes something about the game. For example, one card will reduce the health of everything on the field by one when it is played. These abilities disrupt typical gameplay and add a new level of complexity to be explored. This is especially true as many effects, like the one listed in the example, can sometimes harm you rather than help you. So, have fun with them!"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(480, 128)
