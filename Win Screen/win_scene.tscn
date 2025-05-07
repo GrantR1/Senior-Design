@@ -218,10 +218,10 @@ popup/item_0/text = "The Stevens Fund"
 popup/item_0/id = 0
 popup/item_1/text = "Stevens Scholarship Fund"
 popup/item_1/id = 1
-popup/item_2/text = " Stevens Student Emergency Fund"
+popup/item_2/text = "Stevens Student Emergency Fund"
 popup/item_2/id = 2
 popup/item_3/text = "Impact Assistance Term Scholarship Fund"
-popup/item_3/id = 4
+popup/item_3/id = 3
 
 [node name="Submit_vote" type="Button" parent="."]
 layout_mode = 0

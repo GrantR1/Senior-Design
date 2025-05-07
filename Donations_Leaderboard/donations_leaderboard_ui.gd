@@ -76,7 +76,7 @@ func refresh_scores():
 		var row: TreeItem = score_list.create_item(root)
 		row.set_text(0, "No votes yet")
 		return
-	
+	vote_counts.clear()
 	for vote in all_votes["scores"]:
 		var foundation_name : String =  vote.get("name", "")
 		if foundation_name in vote_counts:
