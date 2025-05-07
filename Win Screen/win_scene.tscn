@@ -244,10 +244,10 @@ text = "Submit Vote
 
 [node name="VoteConfirmation" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1433.0
+offset_left = 1341.0
 offset_top = 434.0
-offset_right = 1763.0
-offset_bottom = 532.0
+offset_right = 1819.0
+offset_bottom = 592.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 27
