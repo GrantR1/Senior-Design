@@ -226,6 +226,7 @@ func destroy_card(card, card_owner):
 		card.card_slot_card_in.get_node("Area2D/CollisionShape2D").disabled = false
 	else:
 		newPosit = $"../OponentDiscard".position
+		card.defeated = true
 		if card in opponent_cards_on_battlefield:
 			opponent_cards_on_battlefield.erase(card)
 			if card.card_slot_card_in.card_slot_type == "Spell":
