@@ -13,6 +13,7 @@ var defeated = false
 var ability_script
 var card_description
 var card_name
+var is_enemy = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_parent().connect_card_signals(self); #all cards must be a child of child manager

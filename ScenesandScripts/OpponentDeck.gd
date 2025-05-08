@@ -54,9 +54,12 @@ func draw_card():
 	new_card.get_node("Def").text = str(new_card.def)
 	#new_card.get_node("Cost").text = str(card_database_reference.CARDS[card_drawn_name][2])
 	new_card.card_type = str(card_database_reference[card_drawn_name][3])
+	new_card.card_description = card_database_reference[card_drawn_name][4]
+	new_card.card_name = card_database_reference[card_drawn_name][6]
 	var new_card_ability_script_path = card_database_reference[card_drawn_name][5]
 	if new_card_ability_script_path:
 		new_card.ability_script = load(new_card_ability_script_path).new()
 	$"../Card Manager".add_child(new_card)
+	$"../Card Manager".connect_card_signals(new_card)
 	new_card.name = "Card"
 	$"../EnemyHand".add_card_to_hand(new_card, CARD_DRAW_SPEED)

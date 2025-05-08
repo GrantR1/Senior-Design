@@ -32,11 +32,14 @@ func connect_card_signals(card):
 	card.connect("hovered_off", on_hovered_off_card)
 
 func on_hovered_over_card(card):
-	$"../info/Label".text = card.card_description
-	$"../info/Label2".text = card.card_name + "\nType: " + card.card_type + "\n"
-	if card.card_slot_card_in:
+	if !card.is_enemy:	
+		$"../info/Label".text = card.card_description
+		$"../info/Label2".text = card.card_name + "\nType: " + card.card_type + "\n"
+	if (card.card_slot_card_in and card.is_enemy) or (card.card_slot_card_in):
+		$"../info/Label".text = card.card_description
+		$"../info/Label2".text = card.card_name + "\nType: " + card.card_type + "\n"
 		return
-	if !is_hovering_on_card:
+	if !is_hovering_on_card and !card.is_enemy:
 		is_hovering_on_card = true
 		highlight_card(card, true);
 
