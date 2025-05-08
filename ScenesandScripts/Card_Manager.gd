@@ -40,6 +40,7 @@ func on_hovered_over_card(card):
 		$"../info/Label2".text = card.card_name + "\nType: " + card.card_type + "\n"
 		return
 	if !is_hovering_on_card and !card.is_enemy:
+		print("Excuse me");
 		is_hovering_on_card = true
 		highlight_card(card, true);
 
@@ -86,6 +87,8 @@ func select_card_for_battle(card):
 	
 func highlight_card(card, hovered):
 	if card.card_slot_card_in:
+		return
+	if card.is_enemy:
 		return
 	if hovered:
 		card.scale = Vector2(CARD_BIGGER_SCALE, CARD_BIGGER_SCALE)

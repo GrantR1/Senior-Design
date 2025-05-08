@@ -8,17 +8,16 @@ var card_database_reference
 const CARD_DRAW_SPEED = .5
 const MAX_HAND_SIZE = 7
 const DECKS = {
-	1: CardDatabase.CARDS,   # Assuming CARDS is the first deck (e.g., the "student deck")
-	2: CardDatabase.CARDS2,  # Second deck
-	3: CardDatabase.CARDS3,  # Third deck
-	4: CardDatabase.CARDS4,  # Fourth deck
-	5: CardDatabase.CARDS5   # Fifth deck
+	1: CardDatabase.CARDS2,  # Second deck
+	2: CardDatabase.CARDS3,  # Third deck
+	3: CardDatabase.CARDS4,  # Fourth deck
+	4: CardDatabase.CARDS5   # Fifth deck
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()  # Ensures more random results across runs
-	var chosen_deck_number = randi() % 5 + 1
+	var chosen_deck_number = randi() % 4 + 1
 	card_database_reference = DECKS[chosen_deck_number]
 	for card_name in card_database_reference.keys():
 		original_deck.append(card_name)
