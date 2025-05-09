@@ -1,6 +1,6 @@
 extends Node2D
 
-const CARD_WIDTH = 140
+const CARD_WIDTH = 160
 const HAND_Y_POS = 950
 const MAX_HAND_SIZE = 7
 var player_hand = []
